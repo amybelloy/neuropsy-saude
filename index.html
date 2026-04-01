@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuropsicóloga Especializada | Avaliação Neuropsicológica</title>
+    <link rel="icon" type="image/png"
+        href="https://scontent.xx.fbcdn.net/v/t1.15752-9/656058857_2411639205937633_6964659769190626380_n.png?stp=dst-png_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=nf0dukbsJS0Q7kNvwFUJ9l6&_nc_oc=AdqXOvCdbKMGTRn9Yo-UIWf5e4A2waIP5VsG98GhHodCr6CPS1_GkOr_Duf0MkAyrRDkuvZlLpwMVhUjmQ7Q8qMq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD4wH8gMELA1QSxSWNDrnAa7pBHihCGKFHz6bdeVzqSTi9Tw&oe=69E7E17B" />
+<meta name="google-site-verification" content="wskdXQHWA5rcVQ7OXGYjw40_NRdToY3A0wnGq8U7byQ" />
+    <meta name="description"
+        content="Serviço especializado de Avaliação Neuropsicológica. Identificação de alterações cognitivas e planejamento de tratamentos com uma neuropsicóloga experiente.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navegação -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                    style="height: 45px; display: block;">
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--primary-color);">Neuropsy
+                    Saúde</span>
+            </a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="link active">Início</a>
+                <a href="sobre.html" class="link">Sobre</a>
+                <div class="nav-item-dropdown">
+                    <span class="link" style="cursor: pointer;">Serviços <svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></span>
+                    <div class="dropdown-menu">
+                        <a href="avaliacao.html" class="dropdown-item">Avaliação Neuropsicológica</a>
+                        <a href="consulta.html" class="dropdown-item">Consulta Psicológica</a>
+                    </div>
+                </div>
+                <a href="contato.html" class="link">Contato</a>
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary" style="margin-left: 1rem; display:inline-flex; align-items:center; gap:8px;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z"/></svg> Agendar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - Dois Cérebros Interativos (TEMA CLARO) -->
+    <section id="hero-cinema" style="
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #f4f7fb 60%, #e2e8f0 100%);
+    ">
+        <!-- Canvas para efeito de neurônios (Filtro para Darken Theme) -->
+        <canvas id="neuronCanvas"
+            style="position:absolute;inset:0;z-index:2;pointer-events:none;width:100%;height:100%; filter: invert(1) hue-rotate(180deg); opacity: 0.7;"></canvas>
+
+        <!-- Fundo: grade sutil de pontos escuros -->
+        <div style="position:absolute;inset:0;z-index:1;
+            background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events:none;"></div>
+
+        <!-- CÉREBRO ESQUERDO -->
+        <div id="brainLeft" class="brain-side" style="
+            position: absolute;
+            left: -15%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 600px;
+            opacity: 0.45;
+            z-index: 3;
+            pointer-events: none;
+        ">
+            <div class="brain-glow" style="
+                position:absolute; inset:-20%;
+                background: radial-gradient(ellipse at center, rgba(255,100,150,0.15) 0%, rgba(138,60,200,0.05) 45%, transparent 70%);
+                filter: blur(45px); z-index:0;
+                animation: brainPulse 4s ease-in-out infinite;
+            "></div>
+            <img src="assets/img/brain-hq.png" alt="Cérebro Neural Esquerdo" class="brain-img" style="
+                    width: 100%; display: block; position: relative; z-index:1;
+                    mask-image: radial-gradient(ellipse 70% 60% at left center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
+                    -webkit-mask-image: radial-gradient(ellipse 70% 60% at left center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
+                    filter: drop-shadow(0 0 20px rgba(255,100,180,0.2)) brightness(1.05) saturate(1.5) hue-rotate(-15deg);
+                    transition: filter 0.5s ease, transform 0.6s ease;
+                    transform-origin: right center;
+                ">
+        </div>
+
+        <!-- CÉREBRO DIREITO -->
+        <div id="brainRight" class="brain-side" style="
+            position: absolute;
+            right: -15%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 600px;
+            opacity: 0.45;
+            z-index: 3;
+            pointer-events: none;
+        ">
+            <div class="brain-glow" style="
+                position:absolute; inset:-20%;
+                background: radial-gradient(ellipse at center, rgba(12,200,200,0.15) 0%, rgba(60,100,200,0.05) 45%, transparent 70%);
+                filter: blur(45px); z-index:0;
+                animation: brainPulse 4s ease-in-out infinite 2s;
+            "></div>
+            <img src="assets/img/brain-hq.png" alt="Cérebro Neural Direito" class="brain-img" style="
+                    width: 100%; display: block; position: relative; z-index:1;
+                    mask-image: radial-gradient(ellipse 70% 60% at right center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
+                    -webkit-mask-image: radial-gradient(ellipse 70% 60% at right center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
+                    filter: drop-shadow(0 0 20px rgba(0,220,220,0.2)) brightness(1.05) saturate(1.5) hue-rotate(15deg);
+                    transition: filter 0.5s ease, transform 0.6s ease;
+                    transform-origin: left center;
+                ">
+        </div>
+
+        <!-- Overlay central para legibilidade do texto -->
+        <div style="
+            position:absolute; inset:0; z-index:4; pointer-events:none;
+            background: radial-gradient(ellipse at 50% 50%,
+                rgba(255,255,255,0.95) 0%,
+                rgba(255,255,255,0.8) 35%,
+                rgba(255,255,255,0.3) 65%,
+                transparent 85%
+            );
+        "></div>
+
+        <!-- CONTEÚDO CENTRAL -->
+        <div class="container"
+            style="position:relative; z-index:10; text-align:center; padding-top:2rem; padding-bottom:1rem; max-width:700px;">
+
+            <!-- Pill -->
+            <div class="reveal" style="
+                display:inline-flex; align-items:center; gap:10px;
+                background:rgba(0,0,0,0.03); border:1px solid rgba(0,0,0,0.08);
+                backdrop-filter:blur(14px); padding:6px 18px; border-radius:50px; margin-bottom:1rem;
+            ">
+                <div
+                    style="width:8px;height:8px;border-radius:50%;background:#0ca696;box-shadow:0 0 10px rgba(12,166,150,0.5);animation:blinkCin 2s infinite;">
+                </div>
+                <span
+                    style="color:#2d1557;font-size:0.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-family:'Outfit',sans-serif;">Especialista
+                    em Neuropsicologia</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="reveal" style="
+                font-family:'Outfit',sans-serif;
+                font-size:clamp(2.5rem,6vw,5.5rem);
+                font-weight:900;
+                line-height:0.95;
+                margin-bottom:0.8rem;
+                letter-spacing:-1.5px;
+            ">
+                <span style="
+                    display:block;
+                    background:linear-gradient(130deg,#1e0535 0%,#622f77 40%,#a78de8 80%);
+                    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+                    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+                ">Neuropsy</span>
+                <span style="
+                    display:block;
+                    background:linear-gradient(130deg,#0ca696 0%,#087768 50%,#F9DA5F 100%);
+                    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+                    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+                ">Saúde</span>
+            </h1>
+
+            <!-- Descrição -->
+            <p class="reveal" style="
+                color:rgba(0,0,0,0.65);font-size:1.05rem;line-height:1.5;
+                margin:0 auto 1.2rem auto;font-weight:400;max-width:480px;
+            ">
+                Clínica especializada no diagnóstico e avaliação cognitiva de crianças, adolescentes, adultos e idosos
+                no coração de Niterói.
+            </p>
+
+            <!-- CTAs -->
+            <div class="reveal"
+                style="display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+                <a href="https://wa.me/5521980345623" target="_blank" style="
+                    display:inline-flex;align-items:center;gap:10px;
+                    background:#0ca696;color:#fff;
+                    padding:0.8rem 1.8rem;border-radius:50px;
+                    font-weight:700;font-family:'Outfit',sans-serif;font-size:0.95rem;
+                    box-shadow:0 10px 30px rgba(12,166,150,0.25);
+                    transition:all 0.3s ease;text-decoration:none;
+                " onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 15px 40px rgba(12,166,150,0.35)'"
+                    onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(12,166,150,0.25)'">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+                    </svg>
+                    Agendar via WhatsApp
+                </a>
+                <a href="#ofereca" style="
+                    display:inline-flex;align-items:center;gap:8px;
+                    background:transparent;color:#1e0535;
+                    border:1px solid rgba(0,0,0,0.15);
+                    padding:0.8rem 1.8rem;border-radius:50px;
+                    font-weight:600;font-family:'Outfit',sans-serif;font-size:0.95rem;
+                    transition:all 0.3s ease;text-decoration:none;
+                " onmouseover="this.style.background='rgba(0,0,0,0.03)';this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'">
+                    Saiba mais
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 8h10M10 3l5 5-5 5" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="reveal"
+                style="display:flex;gap:2rem;border-top:1px solid rgba(0,0,0,0.1);padding-top:1.2rem;flex-wrap:wrap;justify-content:center;">
+                <div style="padding:0.2rem 1rem;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:#1e0535;line-height:1;">
+                        2000+</div>
+                    <div
+                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        Avaliações reais</div>
+                </div>
+                <div style="padding:0.2rem 1rem;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800;color:#1e0535;line-height:1.3;">
+                        CRP 05/54915</div>
+                    <div
+                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        Registro ativo</div>
+                </div>
+                <div style="padding:0.2rem 1rem;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:#1e0535;line-height:1;">
+                        Niterói</div>
+                    <div
+                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        Centro · RJ</div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @keyframes brainPulse {
+
+                0%,
+                100% {
+                    opacity: 0.6;
+                    transform: scale(1);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1.02);
+                }
+            }
+
+            @keyframes blinkCin {
+
+                0%,
+                100% {
+                    opacity: 1;
+                    box-shadow: 0 0 8px rgba(12, 166, 150, 0.5);
+                }
+
+                50% {
+                    opacity: 0.3;
+                    box-shadow: 0 0 2px rgba(12, 166, 150, 0.1);
+                }
+            }
+
+            /* Hover: cérebros com filtro dinâmico */
+            #hero-cinema:hover #brainLeft .brain-img {
+                filter: drop-shadow(0 0 35px rgba(255, 100, 180, 0.4)) brightness(1.1) saturate(1.7) hue-rotate(-15deg);
+                transform: scale(1.04) translateX(8px);
+            }
+
+            #hero-cinema:hover #brainRight .brain-img {
+                filter: drop-shadow(0 0 35px rgba(0, 220, 220, 0.4)) brightness(1.1) saturate(1.7) hue-rotate(15deg);
+                transform: scale(1.04) translateX(-8px);
+            }
+
+            #hero-cinema:hover .brain-glow {
+                opacity: 1;
+                animation-play-state: running;
+            }
+
+            @media(max-width:900px) {
+                #brainLeft {
+                    left: -20%;
+                    width: 55%;
+                    opacity: 0.35;
+                }
+
+                #brainRight {
+                    right: -20%;
+                    width: 55%;
+                    opacity: 0.35;
+                }
+            }
+
+            @media(max-width:600px) {
+
+                #brainLeft,
+                #brainRight {
+                    display: none;
+                }
+            }
+        </style>
+
+        <script>
+            (function () {
+                // ── Canvas de neurônios ───────────────────────────────────────────
+                var canvas = document.getElementById('neuronCanvas');
+                var ctx = canvas.getContext('2d');
+                var W, H, particles = [], lines = [], mouse = { x: -9999, y: -9999, active: false };
+                var PARTICLE_COUNT = 80;
+                var MAX_DIST = 180;
+                var colors = ['rgba(255,100,180,', 'rgba(180,100,255,', 'rgba(0,220,220,', 'rgba(255,220,80,'];
+
+                function resize() {
+                    W = canvas.width = canvas.offsetWidth;
+                    H = canvas.height = canvas.offsetHeight;
+                }
+
+                function Particle() {
+                    this.x = Math.random() * W;
+                    this.y = Math.random() * H;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.r = Math.random() * 2.5 + 1;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.pulse = Math.random() * Math.PI * 2;
+                    this.pulseSpeed = Math.random() * 0.03 + 0.01;
+                    this.fired = false;
+                    this.fireTimer = 0;
+                }
+
+                Particle.prototype.update = function () {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.pulse += this.pulseSpeed;
+                    if (this.x < 0 || this.x > W) this.vx *= -1;
+                    if (this.y < 0 || this.y > H) this.vy *= -1;
+                    // Reagir ao mouse
+                    if (mouse.active) {
+                        var dx = this.x - mouse.x, dy = this.y - mouse.y;
+                        var d = Math.sqrt(dx * dx + dy * dy);
+                        if (d < 120) {
+                            var force = 0.6 * (1 - d / 120);
+                            this.vx += dx / d * force;
+                            this.vy += dy / d * force;
+                            var spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+                            if (spd > 3) { this.vx = this.vx / spd * 3; this.vy = this.vy / spd * 3; }
+                        }
+                    }
+                };
+
+                Particle.prototype.draw = function () {
+                    var alpha = 0.5 + 0.5 * Math.sin(this.pulse);
+                    var glow = this.r * (2 + 2 * Math.sin(this.pulse));
+                    // Brilho externo
+                    var grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, glow * 3);
+                    grad.addColorStop(0, this.color + '' + alpha + ')');
+                    grad.addColorStop(1, this.color + '0)');
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, glow * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                    // Núcleo
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color + '' + (alpha) + ')';
+                    ctx.fill();
+                };
+
+                function initParticles() {
+                    particles = [];
+                    for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+                }
+
+                function drawConnections() {
+                    for (var i = 0; i < particles.length; i++) {
+                        for (var j = i + 1; j < particles.length; j++) {
+                            var dx = particles[i].x - particles[j].x;
+                            var dy = particles[i].y - particles[j].y;
+                            var d = Math.sqrt(dx * dx + dy * dy);
+                            var mDist = MAX_DIST, alpha = 0;
+                            if (mouse.active) {
+                                var mx = (particles[i].x + particles[j].x) / 2 - mouse.x;
+                                var my = (particles[i].y + particles[j].y) / 2 - mouse.y;
+                                var md = Math.sqrt(mx * mx + my * my);
+                                if (md < 250) mDist = MAX_DIST + 100;
+                            }
+                            if (d < mDist) {
+                                alpha = (1 - d / mDist) * 0.5;
+                                if (mouse.active) {
+                                    var mx2 = (particles[i].x + particles[j].x) / 2 - mouse.x;
+                                    var my2 = (particles[i].y + particles[j].y) / 2 - mouse.y;
+                                    var md2 = Math.sqrt(mx2 * mx2 + my2 * my2);
+                                    if (md2 < 250) alpha *= (1.5 + 1 * (1 - md2 / 250));
+                                }
+                                var cx = (particles[i].x + particles[j].x) / 2 / W;
+                                var r = Math.round(180 + cx * 75);
+                                var g = Math.round(80 + (1 - cx) * 120);
+                                var b = Math.round(255 - cx * 120);
+                                ctx.beginPath();
+                                ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+                                ctx.lineWidth = mouse.active ? 1.2 : 0.7;
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+
+                var signals = [];
+                function fireSignal() {
+                    if (!mouse.active) return;
+                    var close = [], best = Infinity, src = null;
+                    particles.forEach(function (p) {
+                        var d = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+                        if (d < best) { best = d; src = p; }
+                    });
+                    if (!src) return;
+                    var neighbors = particles.filter(function (p) {
+                        return p !== src && Math.hypot(p.x - src.x, p.y - src.y) < MAX_DIST + 80;
+                    });
+                    if (neighbors.length === 0) return;
+                    var target = neighbors[Math.floor(Math.random() * neighbors.length)];
+                    signals.push({
+                        x: src.x, y: src.y,
+                        tx: target.x, ty: target.y,
+                        progress: 0, speed: 0.035,
+                        color: src.color
+                    });
+                }
+
+                function updateSignals() {
+                    signals = signals.filter(function (s) {
+                        s.progress += s.speed;
+                        s.x = s.x + (s.tx - s.x) * s.speed * 8;
+                        s.y = s.y + (s.ty - s.y) * s.speed * 8;
+                        var alpha = 1 - s.progress;
+                        if (alpha <= 0) return false;
+                        var grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, 12);
+                        grad.addColorStop(0, s.color + alpha + ')');
+                        grad.addColorStop(1, s.color + '0)');
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, 10, 0, Math.PI * 2);
+                        ctx.fillStyle = grad;
+                        ctx.fill();
+                        return s.progress < 1;
+                    });
+                }
+
+                var frameCount = 0;
+                function animate() {
+                    requestAnimationFrame(animate);
+                    ctx.clearRect(0, 0, W, H);
+                    drawConnections();
+                    particles.forEach(function (p) { p.update(); p.draw(); });
+                    updateSignals();
+                    frameCount++;
+                    if (mouse.active && frameCount % 8 === 0) fireSignal();
+                }
+
+                var section = document.getElementById('hero-cinema');
+                if (section) {
+                    section.addEventListener('mousemove', function (e) {
+                        var r = section.getBoundingClientRect();
+                        mouse.x = e.clientX - r.left;
+                        mouse.y = e.clientY - r.top;
+                        mouse.active = true;
+                        var bl = document.getElementById('brainLeft');
+                        var br = document.getElementById('brainRight');
+                        var xN = (mouse.x / W - 0.5) * 2;
+                        var yN = (mouse.y / H - 0.5) * 2;
+                        if (bl) bl.style.transform = 'translateY(calc(-50% + ' + (yN * 10) + 'px)) translateX(' + (xN * 8) + 'px)';
+                        if (br) br.style.transform = 'translateY(calc(-50% + ' + (yN * 10) + 'px)) translateX(' + (xN * -8) + 'px)';
+                    });
+                    section.addEventListener('mouseleave', function () {
+                        mouse.active = false;
+                        mouse.x = -9999; mouse.y = -9999;
+                        var bl = document.getElementById('brainLeft');
+                        var br = document.getElementById('brainRight');
+                        if (bl) bl.style.transform = 'translateY(-50%)';
+                        if (br) br.style.transform = 'translateY(-50%)';
+                    });
+                }
+
+                window.addEventListener('resize', function () { resize(); initParticles(); });
+                resize();
+                initParticles();
+                animate();
+            })();
+        </script>
+    </section>
+
+    <!-- O que é Avaliação Neuropsicológica (NOVA) -->
+    <section class="reveal" style="padding: 6rem 0; background-color: var(--bg-color);">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div>
+                <span style="font-family: 'Outfit', sans-serif; color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">O que é</span>
+                <h2 style="font-size: 2.8rem; color: var(--primary-color); margin-bottom: 1.5rem; line-height: 1.1;">Avaliação Neuropsicológica</h2>
+                
+                <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
+                    A Avaliação Neuropsicológica é um mapeamento profundo que examina como o seu cérebro processa as informações do dia a dia. É um processo clínico minucioso desenhado para entender a forma como você pensa, sente, resolve problemas e se relaciona com o mundo.
+                </p>
+                <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+                    Por meio de uma investigação acolhedora do seu funcionamento cognitivo e comportamental, nossos especialistas utilizam instrumentos de ponta, aplicáveis tanto em formato presencial quanto em ferramentas interativas, para trazer clareza diagnóstica.
+                </p>
+
+                <p style="color: var(--primary-color); font-weight: 500; font-size: 1.1rem; margin-bottom: 2rem;">Acompanhe abaixo as etapas do nosso processo:</p>
+
+                <blockquote style="font-style: italic; color: #7a918d; border-left: 4px solid var(--secondary-color); padding-left: 1rem; margin-bottom: 2.5rem; font-size: 1.05rem;">
+                    "Nosso objetivo não é só apresentar números, mas traduzir a neurociência em um entendimento real e transformador para a sua jornada."
+                </blockquote>
+
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.05rem;">Quero agendar minha avaliação</a>
+            </div>
+
+            <!-- Imagem Gerada ao Lado -->
+            <div style="position: relative;">
+                <img src="assets/img/testes-online.png" alt="Testes Neuropsicológicos" style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
+                <div style="position: absolute; top: 20px; right: -20px; background: var(--surface-color); padding: 1rem; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; border: 1px solid rgba(12,166,150,0.1);">
+                    <div style="width: 40px; height: 40px; background: rgba(12,166,150,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.95rem; color: var(--text-dark);">Testagem Digital</div>
+                        <div style="font-size: 0.8rem; color: var(--text-light);">Precisão Clínica</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passos Interativos (MOVIDO E EXPANDIDO) -->
+    <section class="reveal" style="background-color: var(--bg-color); border-bottom: 1px solid rgba(0,0,0,0.03); padding: 5rem 0;">
+        <div class="container">
+            <h2 class="section-title">Como funciona a avaliação</h2>
+            <div class="steps-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">01</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h4>Entrevistas Clínicas Humanizadas</h4>
+                    <p>Encontros iniciais cruciais para acolher, debater e entender detalhadamente seu histórico e suas principais queixas.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">02</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h4>Entrevistas com a Família</h4>
+                    <p>Diálogos necessários para a coleta de dados adicionais e para construir uma avaliação sistêmica baseada no seu contexto completo.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">03</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h4>Escalas Comportamentais</h4>
+                    <p>Aplicação de protocolos científicos e padronizados para o mapeamento específico de traços de personalidade, variações de humor e ansiedade.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">04</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <h4>Testes de Inteligência</h4>
+                    <p>Sessão de avaliações englobando habilidades e raciocínio lógico utilizando metodologias precisas para averiguação direta de QI intelectual.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">05</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h4>Aplicação de Testes Online</h4>
+                    <p>Aproveitamos a tecnologia de forma assertiva com plataformas dinâmicas e interativas otimizando o conforto do paciente.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">06</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <h4>Entrega do Laudo</h4>
+                    <p>Entrevista de devolução transparente com entrega de laudos estruturados, perfil neuropsicológico alcançado e todos os encaminhamentos cirúrgicos.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        @media (max-width: 900px) {
+            .container[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                text-align: left;
+            }
+            .container[style*="grid-template-columns: 1fr 1fr"] img {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Seção Quem Somos (Missão, Visão e Valores) -->
+    <section class="reveal" style="padding: 5rem 0; background-color: var(--surface-color);">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 1rem; color: var(--text-dark);">Quem Somos</h2>
+            <p
+                style="text-align: center; color: var(--text-light); max-width: 800px; margin: 0 auto 4rem auto; font-size: 1.1rem; line-height: 1.6;">
+                A Neuropsy Saúde é uma clínica de psicologia em Niterói dedicada à avaliação neuropsicológica em todas
+                as idades. Liderada pela psicóloga Charla Menezes (CRP 05/54915), oferece diagnósticos precisos e
+                acompanhamento humanizado.
+            </p>
+
+            <div class="steps-grid" style="margin-top: 3rem;">
+                <!-- Card Missão -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Missão</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Guiar pessoas em sua
+                        jornada neuropsicológica com excelência e acolhimento.</p>
+                </div>
+
+                <!-- Card Visão -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Visão</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ser referência em
+                        avaliação neuropsicológica em Niterói e no Rio de Janeiro.</p>
+                </div>
+
+                <!-- Card Valores -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Valores</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ética, empatia, inovação
+                        e compromisso com o bem-estar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que é a Neuropsicologia (Galeria Interativa) -->
+    <section id="ofereca" class="reveal">
+        <div class="container process-layout">
+            <div class="process-text">
+                <h3
+                    style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                    Avaliação Neuropsicológica</h3>
+                <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 1.5rem;">É um processo
+                    investigativo completo do funcionamento cognitivo, emocional e comportamental.</p>
+                <p style="font-size: 1.05rem; color: var(--text-light); margin-bottom: 2rem;">Utilizamos testes,
+                    ferramentas lúdicas e metodologias validadas para mapear sua atenção, memória, raciocínio e emoções.
+                    O objetivo é compreender cada pessoa de forma integral, auxiliando em diagnósticos ou elaborando
+                    planos de tratamento super assertivos.</p>
+                <ul class="check-list" style="margin-top: 0;">
+                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Acolhimento profundo e escuta</li>
+                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Ambiente preparado para seu foco</li>
+                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Entregas de laudos bem detalhados</li>
+                </ul>
+            </div>
+
+            <div class="process-gallery">
+                <div class="p-img p-img-1 hover-zoom"><img src="assets/img/av-proc-1.png"
+                        alt="Praticando a escuta empática na avaliação"></div>
+                <div class="p-img p-img-2 hover-zoom"><img src="assets/img/av-proc-2.png"
+                        alt="Materiais lúdicos e testes cognitivos de mesa"></div>
+                <div class="p-img p-img-3 hover-zoom"><img src="assets/img/av-proc-3.png"
+                        alt="Profissional com prancheta de análise neuropsicológica"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Diagnósticos e Transtornos (NOVA SEÇÃO) -->
+    <section class="reveal" style="padding: 5rem 0; background-color: var(--bg-color);">
+        <div class="container">
+            <div style="text-align: left; margin-bottom: 3rem;">
+                <span style="font-family: 'Outfit', sans-serif; color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Diagnósticos</span>
+                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;">Possíveis através da Avaliação</h2>
+                <p style="color: var(--text-light); font-size: 1.05rem; max-width: 800px;">
+                    Nosso compromisso é com diagnósticos precisos que respeitam a complexidade humana e abrem portas para tratamentos transformadores.
+                </p>
+            </div>
+
+            <div class="diag-grid">
+                <!-- Coluna Esquerda: Neurodesenvolvimento -->
+                <div class="diag-card">
+                    <h3>Transtornos do Neurodesenvolvimento</h3>
+                    
+                    <details class="diag-item">
+                        <summary>TEA - Transtorno do Espectro Autista</summary>
+                        <div class="diag-answer">
+                            Identificamos características do autismo, como diferenças na comunicação social, padrões restritos de comportamento e particularidades no processamento sensorial. Oferecemos um diagnóstico preciso que orienta intervenções personalizadas e acolhedoras.
+                        </div>
+                    </details>
+                    
+                    <details class="diag-item">
+                        <summary>TDAH - Transtorno do Déficit de Atenção</summary>
+                        <div class="diag-answer">
+                            Avaliamos dificuldades persistentes de desatenção, hiperatividade e impulsividade que interferem no funcionamento diário ou no desenvolvimento, auxiliando na criação de estratégias de manejo adequadas.
+                        </div>
+                    </details>
+
+                    <details class="diag-item">
+                        <summary>Deficiência Intelectual</summary>
+                        <div class="diag-answer">
+                            Mapeamos funções intelectuais e adaptativas que podem estar abaixo do esperado para a faixa etária, fundamentais para garantir os apoios necessários em diferentes contextos.
+                        </div>
+                    </details>
+
+                    <details class="diag-item">
+                        <summary>Transtorno Específico da Aprendizagem</summary>
+                        <div class="diag-answer">
+                            Investigamos dificuldades severas e persistentes de aprendizagem em domínios como leitura, escrita ou matemática, mesmo com instrução adequada.
+                        </div>
+                    </details>
+
+                    <details class="diag-item">
+                        <summary>TOD - Transtorno Opositor Desafiador</summary>
+                        <div class="diag-answer">
+                            Analisamos padrões de irritabilidade persistente, argumentação frequente e atitudes desafiadoras, visando o bem-estar familiar e intervenções eficazes.
+                        </div>
+                    </details>
+
+                    <details class="diag-item">
+                        <summary>Altas Habilidades / Superdotação</summary>
+                        <div class="diag-answer">
+                            Identificamos desempenhos notavelmente acima da média em uma ou mais áreas, orientando o enriquecimento curricular e o suporte emocional necessário.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Coluna Direita: Humor -->
+                <div class="diag-card solid-bg" style="display: flex; flex-direction: column;">
+                    <h3>Transtornos de Humor</h3>
+                    
+                    <p class="diag-intro">
+                        Investigamos e mapeamos condições emocionais e flutuações de afeto com profundo cuidado e ética diagnóstica. A avaliação desempenha papel essencial no rastreio da intensidade, duração e do impacto cognitivo presente destas oscilações crônicas.
+                    </p>
+
+                    <details class="diag-item">
+                        <summary>Transtorno de Bipolaridade</summary>
+                        <div class="diag-answer">
+                            Mapeamos o histórico clínico e flutuações cognitivas severas entre episódios maníacos e depressivos, essencial para fechar o diagnóstico diferencial com segurança.
+                        </div>
+                    </details>
+                    
+                    <details class="diag-item">
+                        <summary>Transtorno Depressivo Maior</summary>
+                        <div class="diag-answer">
+                            Avaliamos sintomas duradouros de tristeza profunda, perda de interesse, fadiga crônica e os prejuízos cognitivos (atenção/memória) associados aos quadros de todas as intensidades.
+                        </div>
+                    </details>
+
+                    <details class="diag-item">
+                        <summary>Transtornos de Ansiedade</summary>
+                        <div class="diag-answer">
+                            Identificamos níveis patológicos de preocupação excessiva, fobias e o impacto direto que a ansiedade e o hiper-processamento causam no foco e consolidação da atenção diária.
+                        </div>
+                    </details>
+                    
+                    <details class="diag-item">
+                        <summary>Transtornos Mistos</summary>
+                        <div class="diag-answer">
+                            Investigamos a presença e interação de múltiplos quadros em associação, como ansiedade e depressão marcadas conjuntamente e com danos muito significativos.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3.5rem;">
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(12, 166, 150, 0.3);">
+                    Quero agendar minha avaliação
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Interativo Acordeão -->
+    <section class="reveal">
+        <div class="container faq-container">
+            <div class="faq-intro">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Dúvidas Frequentes</h2>
+                <p style="color: var(--text-light); font-size: 1.05rem; margin-bottom: 2rem; padding-right: 2rem;">Se
+                    você ainda possui incertezas sobre o que esperar de um teste psicológico, veja as respostas ao lado.
+                    A transparência na nossa forma clínica é essencial.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>A avaliação causa dor ou é muito invasiva?</span>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>De maneira alguma! A psicometria utiliza conversas, jogos visuais e espaciais com regras,
+                            exercícios gráficos simples e leitura interativa. É um processo cansativo mentalmente, mas
+                            extremamente orgânico e 100% não-invasivo (não há exames de imagem clínica diretos da nossa
+                            parte).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quanto tempo dura a avaliação?</span>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Uma bateria padronizada exige no geral de 4 a 8 encontros que podem ser semanais ou
+                            aglutinados, dependendo integralmente do que for acordado clinicamente e de qual ferramenta
+                            o paciente melhor se adequa, com duração de 40 minutos por sessão.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Somente suspeitas de TEA (Autismo) devem fazer?</span>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Totalmente incorreto. Apesar de imprescindível para diagnósticos do espectro autista e TDAH,
+                            o neuropsicólogo averígua Alzheimer precoce, declínio mental advindo de stress profundo, e
+                            sequelas de intervenções médicas graves com extremo rigor estatístico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada final / CTA -->
+    <section class="reveal">
+        <div class="container">
+            <div class="cta-section glass-panel">
+                <h2>Deseja compreender melhor o seu caso?</h2>
+                <div class="btn-group">
+                    <a href="avaliacao.html" class="btn btn-outline">Saiba mais sobre a avaliação</a>
+                    <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary">Agendar Consulta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Repaginado Footer e Float WhatsApp -->
+    <a href="https://wa.me/5521980345623" target="_blank" class="whatsapp-float">
+        <svg width="35" height="35" fill="#fff" viewBox="0 0 24 24">
+            <path
+                d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+            <path
+                d="M16.37 14.28c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-1.14-.54-2.18-1.22-2.94-2.16-.16-.21-.02-.32.1-.44.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.28-.22.22-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.62 4.13 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+        </svg>
+        <span class="tooltip">Fale com a Psicóloga</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1 -->
+                <div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2rem;">
+                        <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                            style="height: 35px; display: block;">
+                        <span style="font-weight:600; font-size:1.1rem; color:var(--primary-color);">NEUROPSY
+                            SAÚDE</span>
+                    </div>
+                    <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">Clínica
+                        especializada em avaliação neuropsicológica em Niterói.<br>Atendimento humanizado para todas as
+                        idades.</p>
+                    <p style="color: #b0b0b0; font-size: 0.85rem; line-height: 1.6;">
+                        Clínica Neurocognitiva LTDA<br>
+                        CNPJ: 52.248.724/0001-52<br>
+                        Responsável Técnica: Psicóloga Charla Menezes<br>
+                        CRP 05/54915
+                    </p>
+                </div>
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Contato</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span><strong>Niterói:</strong> Rua Dr. Bormann, 23<br>Sala 505, Centro<br><br><strong>Rio
+                                    de Janeiro:</strong> Copacabana</span>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <a href="tel:+5521980345623" style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;" class="hover-cyan">(21) 98034-5623</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contato@neuropsysaude.com.br"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">contato@neuropsysaude.com.br</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Segunda a sábado<br>das 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Links Rápidos
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size:0.9rem;">
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Quem Somos</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Serviços</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Psicóloga
+                                Charla</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Testes Online</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contato.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Contato</a></li>
+                    </ul>
+
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem; font-weight:600;">Redes Sociais</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/neuropsy.saude" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3.5rem; padding-top: 2rem;">
+                <p style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem;">Neuropsy Saúde &copy; 2025 – Todos
+                    os direitos reservados.</p>
+                <p style="color: #b0b0b0; font-size: 0.9rem;">Desenvolvido por <a
+                        href="https://es-d-1039143120260320-019cf883-cff9-7add-9d25-e0ee03ba00ce.codepen.dev/"
+                        target="_blank"
+                        style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;"
+                        class="hover-cyan">Lanne.pro</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Globais -->
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,3556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuropsicóloga Especializada | Avaliação Neuropsicológica</title>
+    <link rel="icon" type="image/png"
+        href="https://scontent.xx.fbcdn.net/v/t1.15752-9/656058857_2411639205937633_6964659769190626380_n.png?stp=dst-png_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=nf0dukbsJS0Q7kNvwFUJ9l6&_nc_oc=AdqXOvCdbKMGTRn9Yo-UIWf5e4A2waIP5VsG98GhHodCr6CPS1_GkOr_Duf0MkAyrRDkuvZlLpwMVhUjmQ7Q8qMq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD4wH8gMELA1QSxSWNDrnAa7pBHihCGKFHz6bdeVzqSTi9Tw&oe=69E7E17B" />
+<meta name="google-site-verification" content="wskdXQHWA5rcVQ7OXGYjw40_NRdToY3A0wnGq8U7byQ" />
+    <meta name="description"
+        content="Serviço especializado de Avaliação Neuropsicológica. Identificação de alterações cognitivas e planejamento de tratamentos com uma neuropsicóloga experiente.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navegação -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                    style="height: 45px; display: block;">
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--primary-color);">Neuropsy
+                    Saúde</span>
+            </a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="link active">Início</a>
+                <a href="sobre.html" class="link">Sobre</a>
+                <div class="nav-item-dropdown">
+                    <span class="link" style="cursor: pointer;">Serviços <svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></span>
+                    <div class="dropdown-menu">
+                        <a href="avaliacao.html" class="dropdown-item">Avaliação Neuropsicológica</a>
+                        <a href="consulta.html" class="dropdown-item">Consulta Psicológica</a>
+                    </div>
+                </div>
+                <a href="contato.html" class="link">Contato</a>
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary" style="margin-left: 1rem; display:inline-flex; align-items:center; gap:8px;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z"/></svg> Agendar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - Dois Cérebros Interativos (TEMA CLARO) -->
+    <section id="hero-cinema" style="
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #f4f7fb 60%, #e2e8f0 100%);
+    ">
+        <!-- Canvas para efeito de neurônios (Filtro para Darken Theme) -->
+        <canvas id="neuronCanvas"
+            style="position:absolute;inset:0;z-index:2;pointer-events:none;width:100%;height:100%; filter: invert(1) hue-rotate(180deg); opacity: 0.7;"></canvas>
+
+        <!-- Fundo: grade sutil de pontos escuros -->
+        <div style="position:absolute;inset:0;z-index:1;
+            background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events:none;"></div>
+
+        <!-- CÉREBRO ESQUERDO -->
+        <div id="brainLeft" class="brain-side" style="
+            position: absolute;
+            left: -8%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42%;
+            max-width: 560px;
+            z-index: 3;
+            pointer-events: none;
+        ">
+            <div class="brain-glow" style="
+                position:absolute; inset:-20%;
+                background: radial-gradient(ellipse at center, rgba(255,100,150,0.15) 0%, rgba(138,60,200,0.05) 45%, transparent 70%);
+                filter: blur(45px); z-index:0;
+                animation: brainPulse 4s ease-in-out infinite;
+            "></div>
+            <img src="assets/img/brain-hq.png" alt="Cérebro Neural Esquerdo" class="brain-img" style="
+                    width: 100%; display: block; position: relative; z-index:1;
+                    mask-image: radial-gradient(ellipse 75% 46% at left center, black 10%, rgba(0,0,0,0.7) 50%, transparent 100%);
+                    -webkit-mask-image: radial-gradient(ellipse 75% 46% at left center, black 10%, rgba(0,0,0,0.7) 50%, transparent 100%);
+                    filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 20px rgba(255,100,180,0.2)) brightness(1.05) saturate(1.5) hue-rotate(-15deg);
+                    transition: filter 0.5s ease, transform 0.6s ease;
+                    transform-origin: right center;
+                ">
+        </div>
+
+        <!-- CÉREBRO DIREITO -->
+        <div id="brainRight" class="brain-side" style="
+            position: absolute;
+            right: -8%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42%;
+            max-width: 560px;
+            z-index: 3;
+            pointer-events: none;
+        ">
+            <div class="brain-glow" style="
+                position:absolute; inset:-20%;
+                background: radial-gradient(ellipse at center, rgba(12,200,200,0.15) 0%, rgba(60,100,200,0.05) 45%, transparent 70%);
+                filter: blur(45px); z-index:0;
+                animation: brainPulse 4s ease-in-out infinite 2s;
+            "></div>
+            <img src="assets/img/brain-hq.png" alt="Cérebro Neural Direito" class="brain-img" style="
+                    width: 100%; display: block; position: relative; z-index:1;
+                    mask-image: radial-gradient(ellipse 75% 46% at right center, black 10%, rgba(0,0,0,0.7) 50%, transparent 100%);
+                    -webkit-mask-image: radial-gradient(ellipse 75% 46% at right center, black 10%, rgba(0,0,0,0.7) 50%, transparent 100%);
+                    filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 20px rgba(0,220,220,0.2)) brightness(1.05) saturate(1.5) hue-rotate(15deg);
+                    transition: filter 0.5s ease, transform 0.6s ease;
+                    transform-origin: left center;
+                ">
+        </div>
+
+        <!-- Overlay central para legibilidade do texto -->
+        <div style="
+            position:absolute; inset:0; z-index:4; pointer-events:none;
+            background: radial-gradient(ellipse at 50% 50%,
+                rgba(255,255,255,0.95) 0%,
+                rgba(255,255,255,0.8) 35%,
+                rgba(255,255,255,0.3) 65%,
+                transparent 85%
+            );
+        "></div>
+
+        <!-- CONTEÚDO CENTRAL -->
+        <div class="container"
+            style="position:relative; z-index:10; text-align:center; padding-top:2rem; padding-bottom:1rem; max-width:700px;">
+
+            <!-- Pill -->
+            <div class="reveal" style="
+                display:inline-flex; align-items:center; gap:10px;
+                background:rgba(0,0,0,0.03); border:1px solid rgba(0,0,0,0.08);
+                backdrop-filter:blur(14px); padding:6px 18px; border-radius:50px; margin-bottom:1rem;
+            ">
+                <div
+                    style="width:8px;height:8px;border-radius:50%;background:#0ca696;box-shadow:0 0 10px rgba(12,166,150,0.5);animation:blinkCin 2s infinite;">
+                </div>
+                <span
+                    style="color:#2d1557;font-size:0.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-family:'Outfit',sans-serif;">Especialista
+                    em Neuropsicologia</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="reveal" style="
+                font-family:'Outfit',sans-serif;
+                font-size:clamp(2.5rem,6vw,5.5rem);
+                font-weight:900;
+                line-height:0.95;
+                margin-bottom:0.8rem;
+                letter-spacing:-1.5px;
+            ">
+                <span style="
+                    display:block;
+                    background:linear-gradient(130deg,#1e0535 0%,#622f77 40%,#a78de8 80%);
+                    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+                    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+                ">Neuropsy</span>
+                <span style="
+                    display:block;
+                    background:linear-gradient(130deg,#0ca696 0%,#087768 50%,#F9DA5F 100%);
+                    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+                    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+                ">Saúde</span>
+            </h1>
+
+            <!-- Descrição -->
+            <p class="reveal" style="
+                color:rgba(0,0,0,0.65);font-size:1.05rem;line-height:1.5;
+                margin:0 auto 1.2rem auto;font-weight:400;max-width:480px;
+            ">
+                Clínica especializada no diagnóstico e avaliação cognitiva de crianças, adolescentes, adultos e idosos
+                no coração de Niterói.
+            </p>
+
+            <!-- CTAs -->
+            <div class="reveal"
+                style="display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+                <a href="https://wa.me/5521980345623" target="_blank" style="
+                    display:inline-flex;align-items:center;gap:10px;
+                    background:#0ca696;color:#fff;
+                    padding:0.8rem 1.8rem;border-radius:50px;
+                    font-weight:700;font-family:'Outfit',sans-serif;font-size:0.95rem;
+                    box-shadow:0 10px 30px rgba(12,166,150,0.25);
+                    transition:all 0.3s ease;text-decoration:none;
+                " onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 15px 40px rgba(12,166,150,0.35)'"
+                    onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(12,166,150,0.25)'">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+                    </svg>
+                    Agendar via WhatsApp
+                </a>
+                <a href="#ofereca" style="
+                    display:inline-flex;align-items:center;gap:8px;
+                    background:transparent;color:#1e0535;
+                    border:1px solid rgba(0,0,0,0.15);
+                    padding:0.8rem 1.8rem;border-radius:50px;
+                    font-weight:600;font-family:'Outfit',sans-serif;font-size:0.95rem;
+                    transition:all 0.3s ease;text-decoration:none;
+                " onmouseover="this.style.background='rgba(0,0,0,0.03)';this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'">
+                    Saiba mais
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 8h10M10 3l5 5-5 5" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="reveal"
+                style="display:flex;gap:2rem;border-top:1px solid rgba(0,0,0,0.1);padding-top:1.2rem;flex-wrap:wrap;justify-content:center;">
+                <div style="padding:0.2rem 1rem;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:#1e0535;line-height:1;">
+                        2000+</div>
+                    <div
+                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        Avaliações reais</div>
+                </div>
+                <div style="padding:0.2rem 1rem;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800;color:#1e0535;line-height:1.3;">
+                        CRP 05/54915</div>
+                    <div
+                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        Registro ativo</div>
+                </div>
+                <div style="padding:0.2rem 1rem;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:#1e0535;line-height:1;">
+                        Niterói</div>
+                    <div
+                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        Centro · RJ</div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @keyframes brainPulse {
+
+                0%,
+                100% {
+                    opacity: 0.6;
+                    transform: scale(1);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1.02);
+                }
+            }
+
+            @keyframes blinkCin {
+
+                0%,
+                100% {
+                    opacity: 1;
+                    box-shadow: 0 0 8px rgba(12, 166, 150, 0.5);
+                }
+
+                50% {
+                    opacity: 0.3;
+                    box-shadow: 0 0 2px rgba(12, 166, 150, 0.1);
+                }
+            }
+
+            /* Hover: cérebros com filtro dinâmico */
+            #hero-cinema:hover #brainLeft .brain-img {
+                filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 35px rgba(255, 100, 180, 0.4)) brightness(1.1) saturate(1.7) hue-rotate(-15deg);
+                transform: scale(1.04) translateX(8px);
+            }
+
+            #hero-cinema:hover #brainRight .brain-img {
+                filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 35px rgba(0, 220, 220, 0.4)) brightness(1.1) saturate(1.7) hue-rotate(15deg);
+                transform: scale(1.04) translateX(-8px);
+            }
+
+            #hero-cinema:hover .brain-glow {
+                opacity: 1;
+                animation-play-state: running;
+            }
+
+            @media(max-width:900px) {
+                #brainLeft {
+                    left: -20%;
+                    width: 55%;
+                    opacity: 0.35;
+                }
+
+                #brainRight {
+                    right: -20%;
+                    width: 55%;
+                    opacity: 0.35;
+                }
+            }
+
+            @media(max-width:600px) {
+
+                #brainLeft,
+                #brainRight {
+                    display: none;
+                }
+            }
+        </style>
+
+        <script>
+            (function () {
+                // ── Canvas de neurônios ───────────────────────────────────────────
+                var canvas = document.getElementById('neuronCanvas');
+                var ctx = canvas.getContext('2d');
+                var W, H, particles = [], lines = [], mouse = { x: -9999, y: -9999, active: false };
+                var PARTICLE_COUNT = 80;
+                var MAX_DIST = 180;
+                var colors = ['rgba(255,100,180,', 'rgba(180,100,255,', 'rgba(0,220,220,', 'rgba(255,220,80,'];
+
+                function resize() {
+                    W = canvas.width = canvas.offsetWidth;
+                    H = canvas.height = canvas.offsetHeight;
+                }
+
+                function Particle() {
+                    this.x = Math.random() * W;
+                    this.y = Math.random() * H;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.r = Math.random() * 2.5 + 1;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.pulse = Math.random() * Math.PI * 2;
+                    this.pulseSpeed = Math.random() * 0.03 + 0.01;
+                    this.fired = false;
+                    this.fireTimer = 0;
+                }
+
+                Particle.prototype.update = function () {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.pulse += this.pulseSpeed;
+                    if (this.x < 0 || this.x > W) this.vx *= -1;
+                    if (this.y < 0 || this.y > H) this.vy *= -1;
+                    // Reagir ao mouse
+                    if (mouse.active) {
+                        var dx = this.x - mouse.x, dy = this.y - mouse.y;
+                        var d = Math.sqrt(dx * dx + dy * dy);
+                        if (d < 120) {
+                            var force = 0.6 * (1 - d / 120);
+                            this.vx += dx / d * force;
+                            this.vy += dy / d * force;
+                            var spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+                            if (spd > 3) { this.vx = this.vx / spd * 3; this.vy = this.vy / spd * 3; }
+                        }
+                    }
+                };
+
+                Particle.prototype.draw = function () {
+                    var alpha = 0.5 + 0.5 * Math.sin(this.pulse);
+                    var glow = this.r * (2 + 2 * Math.sin(this.pulse));
+                    // Brilho externo
+                    var grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, glow * 3);
+                    grad.addColorStop(0, this.color + '' + alpha + ')');
+                    grad.addColorStop(1, this.color + '0)');
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, glow * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                    // Núcleo
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color + '' + (alpha) + ')';
+                    ctx.fill();
+                };
+
+                function initParticles() {
+                    particles = [];
+                    for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+                }
+
+                function drawConnections() {
+                    for (var i = 0; i < particles.length; i++) {
+                        for (var j = i + 1; j < particles.length; j++) {
+                            var dx = particles[i].x - particles[j].x;
+                            var dy = particles[i].y - particles[j].y;
+                            var d = Math.sqrt(dx * dx + dy * dy);
+                            var mDist = MAX_DIST, alpha = 0;
+                            if (mouse.active) {
+                                var mx = (particles[i].x + particles[j].x) / 2 - mouse.x;
+                                var my = (particles[i].y + particles[j].y) / 2 - mouse.y;
+                                var md = Math.sqrt(mx * mx + my * my);
+                                if (md < 250) mDist = MAX_DIST + 100;
+                            }
+                            if (d < mDist) {
+                                alpha = (1 - d / mDist) * 0.5;
+                                if (mouse.active) {
+                                    var mx2 = (particles[i].x + particles[j].x) / 2 - mouse.x;
+                                    var my2 = (particles[i].y + particles[j].y) / 2 - mouse.y;
+                                    var md2 = Math.sqrt(mx2 * mx2 + my2 * my2);
+                                    if (md2 < 250) alpha *= (1.5 + 1 * (1 - md2 / 250));
+                                }
+                                var cx = (particles[i].x + particles[j].x) / 2 / W;
+                                var r = Math.round(180 + cx * 75);
+                                var g = Math.round(80 + (1 - cx) * 120);
+                                var b = Math.round(255 - cx * 120);
+                                ctx.beginPath();
+                                ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+                                ctx.lineWidth = mouse.active ? 1.2 : 0.7;
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+
+                var signals = [];
+                function fireSignal() {
+                    if (!mouse.active) return;
+                    var close = [], best = Infinity, src = null;
+                    particles.forEach(function (p) {
+                        var d = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+                        if (d < best) { best = d; src = p; }
+                    });
+                    if (!src) return;
+                    var neighbors = particles.filter(function (p) {
+                        return p !== src && Math.hypot(p.x - src.x, p.y - src.y) < MAX_DIST + 80;
+                    });
+                    if (neighbors.length === 0) return;
+                    var target = neighbors[Math.floor(Math.random() * neighbors.length)];
+                    signals.push({
+                        x: src.x, y: src.y,
+                        tx: target.x, ty: target.y,
+                        progress: 0, speed: 0.035,
+                        color: src.color
+                    });
+                }
+
+                function updateSignals() {
+                    signals = signals.filter(function (s) {
+                        s.progress += s.speed;
+                        s.x = s.x + (s.tx - s.x) * s.speed * 8;
+                        s.y = s.y + (s.ty - s.y) * s.speed * 8;
+                        var alpha = 1 - s.progress;
+                        if (alpha <= 0) return false;
+                        var grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, 12);
+                        grad.addColorStop(0, s.color + alpha + ')');
+                        grad.addColorStop(1, s.color + '0)');
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, 10, 0, Math.PI * 2);
+                        ctx.fillStyle = grad;
+                        ctx.fill();
+                        return s.progress < 1;
+                    });
+                }
+
+                var frameCount = 0;
+                function animate() {
+                    requestAnimationFrame(animate);
+                    ctx.clearRect(0, 0, W, H);
+                    drawConnections();
+                    particles.forEach(function (p) { p.update(); p.draw(); });
+                    updateSignals();
+                    frameCount++;
+                    if (mouse.active && frameCount % 8 === 0) fireSignal();
+                }
+
+                var section = document.getElementById('hero-cinema');
+                if (section) {
+                    section.addEventListener('mousemove', function (e) {
+                        var r = section.getBoundingClientRect();
+                        mouse.x = e.clientX - r.left;
+                        mouse.y = e.clientY - r.top;
+                        mouse.active = true;
+                        var bl = document.getElementById('brainLeft');
+                        var br = document.getElementById('brainRight');
+                        var xN = (mouse.x / W - 0.5) * 2;
+                        var yN = (mouse.y / H - 0.5) * 2;
+                        if (bl) bl.style.transform = 'translateY(calc(-50% + ' + (yN * 10) + 'px)) translateX(' + (xN * 8) + 'px)';
+                        if (br) br.style.transform = 'translateY(calc(-50% + ' + (yN * 10) + 'px)) translateX(' + (xN * -8) + 'px)';
+                    });
+                    section.addEventListener('mouseleave', function () {
+                        mouse.active = false;
+                        mouse.x = -9999; mouse.y = -9999;
+                        var bl = document.getElementById('brainLeft');
+                        var br = document.getElementById('brainRight');
+                        if (bl) bl.style.transform = 'translateY(-50%)';
+                        if (br) br.style.transform = 'translateY(-50%)';
+                    });
+                }
+
+                window.addEventListener('resize', function () { resize(); initParticles(); });
+                resize();
+                initParticles();
+                animate();
+            })();
+        </script>
+    </section>
+
+
+
+    <!-- Seção Quem Somos (Missão, Visão e Valores) -->
+    <section class="reveal" style="padding: 5rem 0; background-color: var(--surface-color);">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 1rem; color: var(--text-dark);">Quem Somos</h2>
+            <p
+                style="text-align: center; color: var(--text-light); max-width: 800px; margin: 0 auto 4rem auto; font-size: 1.1rem; line-height: 1.6;">
+                A Neuropsy Saúde é uma clínica de psicologia em Niterói dedicada à avaliação neuropsicológica em todas
+                as idades. Liderada pela psicóloga Charla Menezes (CRP 05/54915), oferece diagnósticos precisos e
+                acompanhamento humanizado.
+            </p>
+
+            <div class="steps-grid" style="margin-top: 3rem;">
+                <!-- Card Missão -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Missão</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Guiar pessoas em sua
+                        jornada neuropsicológica com excelência e acolhimento.</p>
+                </div>
+
+                <!-- Card Visão -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Visão</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ser referência em
+                        avaliação neuropsicológica em Niterói e no Rio de Janeiro.</p>
+                </div>
+
+                <!-- Card Valores -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Valores</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ética, empatia, inovação
+                        e compromisso com o bem-estar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que é a Neuropsicologia (Galeria Interativa) -->
+    <section id="ofereca" class="reveal">
+        <div class="container process-layout">
+            <div class="process-text">
+                <h3
+                    style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                    Avaliação Neuropsicológica</h3>
+                <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 1.5rem;">É um processo
+                    investigativo completo do funcionamento cognitivo, emocional e comportamental.</p>
+                <p style="font-size: 1.05rem; color: var(--text-light); margin-bottom: 2rem;">Utilizamos testes,
+                    ferramentas lúdicas e metodologias validadas para mapear sua atenção, memória, raciocínio e emoções.
+                    O objetivo é compreender cada pessoa de forma integral, auxiliando em diagnósticos ou elaborando
+                    planos de tratamento super assertivos.</p>
+                <ul class="check-list" style="margin-top: 0;">
+                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Acolhimento profundo e escuta</li>
+                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Ambiente preparado para seu foco</li>
+                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Entregas de laudos bem detalhados</li>
+                </ul>
+            </div>
+
+            <div class="process-gallery">
+                <div class="p-img p-img-1 hover-zoom"><img src="assets/img/av-proc-1.png"
+                        alt="Praticando a escuta empática na avaliação"></div>
+                <div class="p-img p-img-2 hover-zoom"><img src="assets/img/av-proc-2.png"
+                        alt="Materiais lúdicos e testes cognitivos de mesa"></div>
+                <div class="p-img p-img-3 hover-zoom"><img src="assets/img/av-proc-3.png"
+                        alt="Profissional com prancheta de análise neuropsicológica"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passos Interativos -->
+    <section class="reveal"
+        style="background-color: var(--surface-color); border-top: 1px solid rgba(0,0,0,0.03); border-bottom: 1px solid rgba(0,0,0,0.03);">
+        <div class="container">
+            <h2 class="section-title">Como Funciona a Avaliação?</h2>
+            <div class="steps-grid">
+
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h4>Anamnese Clínica</h4>
+                    <p>Encontros iniciais cruciais para compreender sua história, suas rotinas e entender todas as suas
+                        queixas principais a fundo.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h4>A Testagem</h4>
+                        <p>Uso de testes cognitivos interativos (jogos de blocos, memória, QI, raciocínio) para
+                            mapeamento direto do cérebro de forma dinâmica.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Entrega do Laudo</h4>
+                    <p>Sessão de devolução clarificadora; entrega e leitura de laudo impresso completo com perfil,
+                        prognósticos e todos os encainhamentos.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Interativo Acordeão -->
+    <section class="reveal">
+        <div class="container faq-container">
+            <div class="faq-intro">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Dúvidas Frequentes</h2>
+                <p style="color: var(--text-light); font-size: 1.05rem; margin-bottom: 2rem; padding-right: 2rem;">Se
+                    você ainda possui incertezas sobre o que esperar de um teste psicológico, veja as respostas ao lado.
+                    A transparência na nossa forma clínica é essencial.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>A avaliação causa dor ou é muito invasiva?</span>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>De maneira alguma! A psicometria utiliza conversas, jogos visuais e espaciais com regras,
+                            exercícios gráficos simples e leitura interativa. É um processo cansativo mentalmente, mas
+                            extremamente orgânico e 100% não-invasivo (não há exames de imagem clínica diretos da nossa
+                            parte).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quanto tempo dura a avaliação?</span>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Uma bateria padronizada exige no geral de 4 a 8 encontros que podem ser semanais ou
+                            aglutinados, dependendo integralmente do que for acordado clinicamente e de qual ferramenta
+                            o paciente melhor se adequa, com duração de 40 minutos por sessão.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Somente suspeitas de TEA (Autismo) devem fazer?</span>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Totalmente incorreto. Apesar de imprescindível para diagnósticos do espectro autista e TDAH,
+                            o neuropsicólogo averígua Alzheimer precoce, declínio mental advindo de stress profundo, e
+                            sequelas de intervenções médicas graves com extremo rigor estatístico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada final / CTA -->
+    <section class="reveal">
+        <div class="container">
+            <div class="cta-section glass-panel">
+                <h2>Deseja compreender melhor o seu caso?</h2>
+                <div class="btn-group">
+                    <a href="avaliacao.html" class="btn btn-outline">Saiba mais sobre a avaliação</a>
+                    <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary">Agendar Consulta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Repaginado Footer e Float WhatsApp -->
+    <a href="https://wa.me/5521980345623" target="_blank" class="whatsapp-float">
+        <svg width="35" height="35" fill="#fff" viewBox="0 0 24 24">
+            <path
+                d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+            <path
+                d="M16.37 14.28c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-1.14-.54-2.18-1.22-2.94-2.16-.16-.21-.02-.32.1-.44.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.28-.22.22-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.62 4.13 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+        </svg>
+        <span class="tooltip">Fale com a Psicóloga</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1 -->
+                <div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2rem;">
+                        <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                            style="height: 35px; display: block;">
+                        <span style="font-weight:600; font-size:1.1rem; color:var(--primary-color);">NEUROPSY
+                            SAÚDE</span>
+                    </div>
+                    <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">Clínica
+                        especializada em avaliação neuropsicológica em Niterói.<br>Atendimento humanizado para todas as
+                        idades.</p>
+                    <p style="color: #b0b0b0; font-size: 0.85rem; line-height: 1.6;">
+                        Clínica Neurocognitiva LTDA<br>
+                        CNPJ: 52.248.724/0001-52<br>
+                        Responsável Técnica: Psicóloga Charla Menezes<br>
+                        CRP 05/54915
+                    </p>
+                </div>
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Contato</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span><strong>Niterói:</strong> Rua Dr. Bormann, 23<br>Sala 505, Centro<br><br><strong>Rio
+                                    de Janeiro:</strong> Copacabana</span>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <a href="tel:+5521980345623" style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;" class="hover-cyan">(21) 98034-5623</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contato@neuropsysaude.com.br"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">contato@neuropsysaude.com.br</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Segunda a sábado<br>das 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Links Rápidos
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size:0.9rem;">
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Quem Somos</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Serviços</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Psicóloga
+                                Charla</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Testes Online</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contato.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Contato</a></li>
+                    </ul>
+
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem; font-weight:600;">Redes Sociais</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/neuropsy.saude" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3.5rem; padding-top: 2rem;">
+                <p style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem;">Neuropsy Saúde &copy; 2025 – Todos
+                    os direitos reservados.</p>
+                <p style="color: #b0b0b0; font-size: 0.9rem;">Desenvolvido por <a
+                        href="https://es-d-1039143120260320-019cf883-cff9-7add-9d25-e0ee03ba00ce.codepen.dev/"
+                        target="_blank"
+                        style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;"
+                        class="hover-cyan">Lanne.pro</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Globais -->
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim | Neuropsicóloga</title>
+    <link rel="icon" type="image/png"
+        href="https://scontent.xx.fbcdn.net/v/t1.15752-9/656058857_2411639205937633_6964659769190626380_n.png?stp=dst-png_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=nf0dukbsJS0Q7kNvwFUJ9l6&_nc_oc=AdqXOvCdbKMGTRn9Yo-UIWf5e4A2waIP5VsG98GhHodCr6CPS1_GkOr_Duf0MkAyrRDkuvZlLpwMVhUjmQ7Q8qMq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD4wH8gMELA1QSxSWNDrnAa7pBHihCGKFHz6bdeVzqSTi9Tw&oe=69E7E17B" />
+    <meta name="google-site-verification" content="wskdXQHWA5rcVQ7OXGYjw40_NRdToY3A0wnGq8U7byQ" />
+    <meta name="description"
+        content="Conheça a trajetória, formação e abordagem de trabalho da Psicóloga Charla Menezes, especialista em Avaliação Neuropsicológica.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .about-section {
+            padding-top: 8rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-img {
+            position: sticky;
+            top: 100px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-text h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text h3 {
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-weight: 400;   
+        }
+
+        .about-block {
+            margin-bottom: 3rem;
+        }
+
+        .about-block h4 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding-bottom: 0.5rem;
+            margin-block: 1rem;
+        }
+
+        .about-block p,
+        .about-block li {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-block ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                position: static;
+                max-width: 400px;
+                margin: 0 auto 3rem auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                    style="height: 45px; display: block;">
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--primary-color);">Neuropsy
+                    Saúde</span>
+            </a>
+            <div class="menu-toggle"><span></span><span></span><span></span></div>
+            <nav class="nav-links">
+                <a href="index.html" class="link">Início</a>
+                <a href="sobre.html" class="link active">Sobre</a>
+                <div class="nav-item-dropdown">
+                    <span class="link" style="cursor: pointer;">Serviços <svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></span>
+                    <div class="dropdown-menu">
+                        <a href="avaliacao.html" class="dropdown-item">Avaliação Neuropsicológica</a>
+                        <a href="consulta.html" class="dropdown-item">Consulta Psicológica</a>
+                    </div>
+                </div>
+                <a href="contato.html" class="link">Contato</a>
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary"
+                    style="margin-left: 1rem; display:inline-flex; align-items:center; gap:8px;"><svg width="18"
+                        height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+                    </svg> Agendar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="about-section reveal">
+        <div class="container about-content">
+            <div class="about-img">
+                <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/646741902_4303020353248352_8769518826187977627_n.png?stp=dst-png_p2048x2048&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=gvcUk5w_mc0Q7kNvwHwE1Q_&_nc_oc=AdoQT-p-qt0ZdQA1Z1NnaXjP5g3dcqa2miJUYSexFMeW0k9BkTshifhhDlc3Yw6A_pHBH-RERNEZosqduTXDB3i6&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AETOpi4y93zTFSkofJSebWiQKqkADiNUvy_wvVQ4mDBjw&oe=69F2A504"
+                    alt="Foto da Neuropsicóloga">
+            </div>
+
+            <div class="about-text glass-panel"
+                style="padding: 3rem; border: none; box-shadow: none; background: transparent;">
+                <h1 style="font-size: 2.8rem;">Charla Menezes</h1>
+                <h3>Psicóloga Especialista</h3>
+
+                <div class="about-block"
+                    style="background: rgba(12, 166, 150, 0.05); padding: 1.5rem; border-radius: 12px; margin-bottom: 2.5rem; border-left: 4px solid var(--primary-color);">
+                    <p style="margin: 0; color: var(--text-light); font-size: 1.1rem; line-height: 1.8;">
+                        Com <strong>mais de 2.000 avaliações realizadas</strong>, a psicóloga Charla Menezes é
+                        especialista em neuropsicologia e referência no atendimento de crianças, adolescentes, adultos e
+                        idosos.
+                    </p>
+                </div>
+
+                <div class="about-block">
+                    <h4 style="display: flex; align-items: center; gap: 8px; color: var(--text-dark); border: none;">
+                        <svg width="24" height="24" fill="none" stroke="var(--primary-color)" stroke-width="2">
+                            <path d="M12 2l3 9s3 0 7 0-5 5-5 5 2 9-5-5-5 5 2-9-5-5s6 0 6 0 3-9 3-9z" />
+                        </svg> Principais áreas de atuação:
+                    </h4>
+                    <ul class="check-list">
+                        <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg> Transtorno do Espectro Autista (TEA)</li>
+                        <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg> Transtorno de Déficit de Atenção e Hiperatividade (TDAH)</li>
+                        <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg> Transtornos Neurocognitivos, como demências</li>
+                        <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg> Transtornos de Aprendizagem</li>
+                    </ul>
+                </div>
+
+                <div class="about-block"
+                    style="border: 1px solid rgba(0,0,0,0.05); background: var(--surface-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                    <h4
+                        style="border:none; margin:0; padding:0; display:flex; align-items:center; gap:8px; color: var(--primary-color);">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg> CRP 05/54915
+                    </h4>
+                    <p style="margin-top: 1rem; margin-bottom: 0;">O objetivo é guiar você numa jornada de
+                        autoconhecimento seguro, propiciando estratégias de tratamento direcionadas para o seu bem-estar
+                        profundo.</p>
+                </div>
+
+                <div class="about-block" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary">Agendar um Horário</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repaginado Footer e Float WhatsApp -->
+    <a href="https://wa.me/5521980345623" target="_blank" class="whatsapp-float">
+        <svg width="35" height="35" fill="#fff" viewBox="0 0 24 24">
+            <path
+                d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+            <path
+                d="M16.37 14.28c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-1.14-.54-2.18-1.22-2.94-2.16-.16-.21-.02-.32.1-.44.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.28-.22.22-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.62 4.13 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+        </svg>
+        <span class="tooltip">Fale com a Psicóloga</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1 -->
+                <div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2rem;">
+                        <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                            style="height: 35px; display: block;">
+                        <span style="font-weight:600; font-size:1.1rem; color:var(--primary-color);">NEUROPSY
+                            SAÚDE</span>
+                    </div>
+                    <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">Clínica
+                        especializada em avaliação neuropsicológica em Niterói.<br>Atendimento humanizado para todas as
+                        idades.</p>
+                    <p style="color: #b0b0b0; font-size: 0.85rem; line-height: 1.6;">
+                        Clínica Neurocognitiva LTDA<br>
+                        CNPJ: 52.248.724/0001-52<br>
+                        Responsável Técnica: Psicóloga Charla Menezes<br>
+                        CRP 05/54915
+                    </p>
+                </div>
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Contato</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span><strong>Niterói:</strong> Rua Dr. Bormann, 23<br>Sala 505, Centro<br><br><strong>Rio
+                                    de Janeiro:</strong> Copacabana</span>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <a href="tel:+5521980345623"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">(21) 98034-5623</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contato@neuropsysaude.com.br"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">contato@neuropsysaude.com.br</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Segunda a sábado<br>das 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Links Rápidos
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size:0.9rem;">
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Quem Somos</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Serviços</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Psicóloga
+                                Charla</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Testes Online</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contato.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Contato</a></li>
+                    </ul>
+
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem; font-weight:600;">Redes Sociais</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/neuropsy.saude" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3.5rem; padding-top: 2rem;">
+                <p style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem;">Neuropsy Saúde &copy; 2025 – Todos
+                    os direitos reservados.</p>
+                <p style="color: #b0b0b0; font-size: 0.9rem;">Desenvolvido por <a
+                        href="https://es-d-1039143120260320-019cf883-cff9-7add-9d25-e0ee03ba00ce.codepen.dev/"
+                        target="_blank"
+                        style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;"
+                        class="hover-cyan">Lanne.pro</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Neuropsicológica | Serviços</title>
+    <link rel="icon" type="image/png"
+        href="https://scontent.xx.fbcdn.net/v/t1.15752-9/656058857_2411639205937633_6964659769190626380_n.png?stp=dst-png_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=nf0dukbsJS0Q7kNvwFUJ9l6&_nc_oc=AdqXOvCdbKMGTRn9Yo-UIWf5e4A2waIP5VsG98GhHodCr6CPS1_GkOr_Duf0MkAyrRDkuvZlLpwMVhUjmQ7Q8qMq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD4wH8gMELA1QSxSWNDrnAa7pBHihCGKFHz6bdeVzqSTi9Tw&oe=69E7E17B" />
+    <meta name="google-site-verification" content="wskdXQHWA5rcVQ7OXGYjw40_NRdToY3A0wnGq8U7byQ" />
+    <meta name="description"
+        content="Entenda o que é, para que serve e como funciona a avaliação neuropsicológica e suas etapas.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .service-hero {
+            padding: 8rem 0 4rem 0;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .service-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            padding: 2.5rem;
+        }
+
+        .info-card h4 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-card p,
+        .info-card ul {
+            color: var(--text-light);
+        }
+
+        .info-card ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Etapas Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 3rem auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                    style="height: 45px; display: block;">
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--primary-color);">Neuropsy
+                    Saúde</span>
+            </a>
+            <div class="menu-toggle"><span></span><span></span><span></span></div>
+            <nav class="nav-links">
+                <a href="index.html" class="link">Início</a>
+                <a href="sobre.html" class="link">Sobre</a>
+                <div class="nav-item-dropdown">
+                    <span class="link active" style="cursor: pointer;">Serviços <svg width="14" height="14"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></span>
+                    <div class="dropdown-menu">
+                        <a href="avaliacao.html" class="dropdown-item" style="color: var(--primary-color);">Avaliação
+                            Neuropsicológica</a>
+                        <a href="consulta.html" class="dropdown-item">Consulta Psicológica</a>
+                    </div>
+                </div>
+                <a href="contato.html" class="link">Contato</a>
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary"
+                    style="margin-left: 1rem; display:inline-flex; align-items:center; gap:8px;"><svg width="18"
+                        height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+                    </svg> Agendar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="service-hero reveal">
+        <div class="container">
+            <h1>Avaliação Neuropsicológica</h1>
+            <p>Um processo minucioso e cuidadoso para mapear o funcionamento do seu cérebro, compreender suas aptidões e
+                auxiliar no melhor curso clínico para suas dificuldades.</p>
+        </div>
+    </section>
+
+    <section class="content-section reveal">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p style="text-align:center; color: var(--text-light); margin-bottom: 4rem; font-size: 1.1rem;">Oferecemos
+                avaliação neuropsicológica completa e especializada para diferentes faixas etárias e condições.</p>
+
+            <div class="card-grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=600&auto=format&fit=crop"
+                        alt="Transtornos de Aprendizagem" class="service-img">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h4>Transtornos de Aprendizagem</h4>
+                        <p style="color: var(--text-light);">Avaliação especializada para dislexia, discalculia e
+                            disortografia. Inclui análise do desempenho escolar e recomendações práticas.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <img src="assets/img/trans-desenv.png" alt="Transtornos do Desenvolvimento" class="service-img">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h4>Transtornos do Desenvolvimento</h4>
+                        <p style="color: var(--text-light);">Diagnóstico preciso de TEA (Transtorno do Espectro Autista)
+                            e TDAH
+                            (Transtorno de Déficit de Atenção e Hiperatividade) para intervenção precoce.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <img src="assets/img/def-intelec.png" alt="Deficiência Intelectual" class="service-img">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3" />
+                                <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4" />
+                                <circle cx="20" cy="10" r="2" />
+                            </svg>
+                        </div>
+                        <h4>Deficiência Intelectual</h4>
+                        <p style="color: var(--text-light);">Investigação profunda de prejuízos cognitivos globais que
+                            impactam a
+                            aprendizagem e habilidades adaptativas do dia a dia do paciente.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop"
+                        alt="Relatórios Diagnósticos" class="service-img">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Relatórios Diagnósticos</h4>
+                        <p style="color: var(--text-light);">Emissão de relatórios claros e pormenorizados com hipóteses
+                            diagnósticas fechadas e
+                            recomendações práticas e assertivas para o tratamento contínuo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testes Online -->
+    <section class="content-section reveal" style="background: linear-gradient(135deg, #F4F7F6 0%, #FFFFFF 100%);">
+        <div class="container"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4rem; align-items: center;">
+            <div>
+                <h3 style="font-size: 2.2rem; color: var(--text-dark); margin-bottom: 2rem;">Testes Online:<br>Faça uma
+                    triagem inicial</h3>
+
+                <div class="test-card">
+                    <div class="test-card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="22" />
+                            <line x1="8" y1="6" x2="16" y2="6" />
+                            <line x1="8" y1="18" x2="16" y2="18" />
+                        </svg>
+                    </div>
+                    <div class="test-card-content">
+                        <h4>Escala de Autismo Infantil</h4>
+                        <p>O diagnóstico precoce é fundamental para reduzir os efeitos do autismo. Responda à escala
+                            online e leve os resultados para discussão com um especialista.</p>
+                        <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary"
+                            style="width: 100%; border-radius: 8px;">Fazer o teste de TEA</a>
+                    </div>
+                </div>
+
+                <div class="test-card">
+                    <div class="test-card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12A10 10 0 1 1 12 2v10z" />
+                        </svg>
+                    </div>
+                    <div class="test-card-content">
+                        <h4>ASRS-18: Triagem de TDAH</h4>
+                        <p>Questionário rápido e validado que ajuda a identificar sinais de TDAH em adultos. Não
+                            substitui diagnóstico profissional.</p>
+                        <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary"
+                            style="width: 100%; border-radius: 8px;">Fazer o teste de TDAH</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="height: 100%; display:flex; align-items:center;">
+                <img src="assets/img/triagem-online.png" alt="Escala de Rastreio e Triagem"
+                    style="border-radius: var(--border-radius-lg); width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.1); height: auto; display:block;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Passos da Avaliação detalhados -->
+    <section class="reveal" style="background-color: var(--surface-color); padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 1rem;">O Passo a Passo da Avaliação</h2>
+            <p
+                style="text-align: center; color: var(--text-light); max-width: 700px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
+                A avaliação é um processo estruturado, humano e altamente investigativo. Entenda detalhadamente cada
+                etapa percorrida e quais procedimentos de teste nós aplicamos.
+            </p>
+
+            <div class="vertical-timeline">
+                <!-- Sessão 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 01: Entrevista de Anamnese</h4>
+                        <p>O primeiro contato clínico guiado por escuta qualificada. Coletamos todo o histórico de vida
+                            familiar, desenvolvimento, médico, escolar e ocupacional para guiar a bateria de testes.</p>
+                    </div>
+                </div>
+                <!-- Sessão 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 02: Atenção e Funções Executivas</h4>
+                        <p>Início empírico com testes voltados ao rastreio da capacidade de foco mantido, impulsividade,
+                            controle inibitório e planejamento através de exercícios lúdicos contra-relógio.</p>
+                    </div>
+                </div>
+                <!-- Sessão 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 03: Inteligência e Raciocínio (QI)</h4>
+                        <p>Utilização de blocos de montagem, arranjos de figuras e resolução de problemas lógicos e
+                            verbais (Ex: Wechsler) para um mapeamento robusto do quociente intelectual global.</p>
+                    </div>
+                </div>
+                <!-- Sessão 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 04: Memória de Curto e Longo Prazo</h4>
+                        <p>Testes práticos elaborados para mensurar qualitativamente a retenção auditiva e visual do
+                            paciente, incluindo memorização de figuras complexas, dezenas de palavras e textos.</p>
+                    </div>
+                </div>
+                <!-- Sessão 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">5</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 05: Linguagem e Fluência</h4>
+                        <p>Avaliação sistemática do vocabulário, compreensão verbal do paciente, velocidade de nomeação
+                            ágil sob pressão e organização do pensamento através de respostas diretas.</p>
+                    </div>
+                </div>
+                <!-- Sessão 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">6</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 06: Habilidades Visoespaciais</h4>
+                        <p>Exames do processamento motor e mental a partir da cópia de diagramas complexos
+                            tridimensionais, bem como tarefas com exigência de percepção de rotação e profundidade.</p>
+                    </div>
+                </div>
+                <!-- Sessão 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">7</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 07: Rastreio Emocional e Comportamental</h4>
+                        <p>Etapa em que aplicamos escalas científicas completas para avaliar a presença de depressão,
+                            ansiedade atípica, perfis de neurodivergência (Autismo/TEA) ou defasagens na vida social.
+                        </p>
+                    </div>
+                </div>
+                <!-- Sessão 8 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">8</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 08: Correção e Raciocínio Clínico</h4>
+                        <p>Fase sem a presença do paciente para análise técnica da psicóloga. É feita a correção
+                            estatística rigorosa dos escores e o cruzamento com todas as nuances observadas
+                            presencialmente.</p>
+                    </div>
+                </div>
+                <!-- Sessão 9 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">9</div>
+                    <div class="timeline-content">
+                        <h4>Sessão 09: Entrega do Laudo (Devolutiva)</h4>
+                        <p>O fechamento reconfortante. Explicação ética e acolhedora de longo prazo detalhando o Laudo
+                            Neuropsicológico impresso com diagnósticos concluídos e a direção de futuro de tratamento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repaginado Footer e Float WhatsApp -->
+    <a href="https://wa.me/5521980345623" target="_blank" class="whatsapp-float">
+        <svg width="35" height="35" fill="#fff" viewBox="0 0 24 24">
+            <path
+                d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+            <path
+                d="M16.37 14.28c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-1.14-.54-2.18-1.22-2.94-2.16-.16-.21-.02-.32.1-.44.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.28-.22.22-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.62 4.13 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+        </svg>
+        <span class="tooltip">Fale com a Psicóloga</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1 -->
+                <div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2rem;">
+                        <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                            style="height: 35px; display: block;">
+                        <span style="font-weight:600; font-size:1.1rem; color:var(--primary-color);">NEUROPSY
+                            SAÚDE</span>
+                    </div>
+                    <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">Clínica
+                        especializada em avaliação neuropsicológica em Niterói.<br>Atendimento humanizado para todas as
+                        idades.</p>
+                    <p style="color: #b0b0b0; font-size: 0.85rem; line-height: 1.6;">
+                        Clínica Neurocognitiva LTDA<br>
+                        CNPJ: 52.248.724/0001-52<br>
+                        Responsável Técnica: Psicóloga Charla Menezes<br>
+                        CRP 05/54915
+                    </p>
+                </div>
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Contato</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span><strong>Niterói:</strong> Rua Dr. Bormann, 23<br>Sala 505, Centro<br><br><strong>Rio
+                                    de Janeiro:</strong> Copacabana</span>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <a href="tel:+5521980345623"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">(21) 98034-5623</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contato@neuropsysaude.com.br"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">contato@neuropsysaude.com.br</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Segunda a sábado<br>das 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Links Rápidos
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size:0.9rem;">
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Quem Somos</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Serviços</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Psicóloga
+                                Charla</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Testes Online</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contato.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Contato</a></li>
+                    </ul>
+
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem; font-weight:600;">Redes Sociais</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/neuropsy.saude" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3.5rem; padding-top: 2rem;">
+                <p style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem;">Neuropsy Saúde &copy; 2025 – Todos
+                    os direitos reservados.</p>
+                <p style="color: #b0b0b0; font-size: 0.9rem;">Desenvolvido por <a
+                        href="https://es-d-1039143120260320-019cf883-cff9-7add-9d25-e0ee03ba00ce.codepen.dev/"
+                        target="_blank"
+                        style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;"
+                        class="hover-cyan">Lanne.pro</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Psicológica | Serviços</title>
+    <link rel="icon" type="image/png"
+        href="https://scontent.xx.fbcdn.net/v/t1.15752-9/656058857_2411639205937633_6964659769190626380_n.png?stp=dst-png_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=nf0dukbsJS0Q7kNvwFUJ9l6&_nc_oc=AdqXOvCdbKMGTRn9Yo-UIWf5e4A2waIP5VsG98GhHodCr6CPS1_GkOr_Duf0MkAyrRDkuvZlLpwMVhUjmQ7Q8qMq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD4wH8gMELA1QSxSWNDrnAa7pBHihCGKFHz6bdeVzqSTi9Tw&oe=69E7E17B" />
+    <meta name="google-site-verification" content="wskdXQHWA5rcVQ7OXGYjw40_NRdToY3A0wnGq8U7byQ" />
+    <meta name="description"
+        content="Consulta psicológica com nossas especialistas Simone, Mariana e Erika. Conheça nosso processo terapêutico.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .service-hero {
+            padding: 8rem 0 4rem 0;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .service-hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        @media (max-width: 992px) {
+            .service-hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                display: none;
+                /* Hide image on smaller screens to prioritize text */
+            }
+        }
+
+        .psychologist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .psy-img {
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .psychologist-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .text-content {
+                order: 2 !important;
+            }
+
+            .img-content {
+                order: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                    style="height: 45px; display: block;">
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--primary-color);">Neuropsy
+                    Saúde</span>
+            </a>
+            <div class="menu-toggle"><span></span><span></span><span></span></div>
+            <nav class="nav-links">
+                <a href="index.html" class="link">Início</a>
+                <a href="sobre.html" class="link">Sobre</a>
+                <div class="nav-item-dropdown">
+                    <span class="link active" style="cursor: pointer;">Serviços <svg width="14" height="14"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></span>
+                    <div class="dropdown-menu">
+                        <a href="avaliacao.html" class="dropdown-item">Avaliação Neuropsicológica</a>
+                        <a href="consulta.html" class="dropdown-item" style="color: var(--primary-color);">Consulta
+                            Psicológica</a>
+                    </div>
+                </div>
+                <a href="contato.html" class="link">Contato</a>
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary" style="margin-left: 1rem; display:inline-flex; align-items:center; gap:8px;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z"/></svg> Agendar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="service-hero reveal">
+        <div class="container">
+            <div>
+                <h1>Consulta Psicológica</h1>
+                <p>Oferecemos também consultas psicológicas em nosso consultório. Conheça nossa equipe de psicólogas
+                    especializadas prontas para acolher você e conduzir seu processo
+                    terapêutico com empatia e ética.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psicóloga Simone -->
+    <section class="reveal" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="psychologist-grid">
+                <div class="text-content" style="order: 1;">
+                    <h2 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 0.5rem;">Psicóloga Simone
+                    </h2>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1.5rem;">CRP: 05/XXXXX</p>
+                    <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.8;">
+                        Simone atua com o objetivo de promover o bem-estar emocional e auxiliar no enfrentamento de
+                        desafios cotidianos. Seu foco é oferecer um espaço de escuta qualificada, onde o paciente se
+                        sinta seguro para explorar suas emoções, lidar com ansiedades e desenvolver um autoconhecimento
+                        profundo e transformador.
+                    </p>
+                </div>
+                <div class="img-content" style="order: 2;">
+                    <!-- Nota: Coloque a foto da profissional na pasta assets/img/ -->
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/656711719_1271614724939975_7534877180978185493_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=5qTwfTllYmkQ7kNvwEg9jdP&_nc_oc=Ado84ntvoZRPiNlQ72I0ri4sf6DlHIeBGE2w0OZfYj9pOuPlGjIOgaj-HlJJQ3Z4-YkMz-NMMGI4oZTT5_ijDhBl&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGMhuM3dOYlDlsXFiB9dTjHq-9vZwZPxtCqF-zc-Vieiw&oe=69F2AB32 "
+                        alt="Psicóloga Simone" class="psy-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psicóloga Mariana -->
+    <section class="reveal" style="padding: 4rem 0; background-color: var(--surface-color);">
+        <div class="container">
+            <div class="psychologist-grid">
+                <div class="img-content" style="order: 1;">
+                    <!-- Nota: Coloque a foto da profissional na pasta assets/img/ -->
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/655987814_907474588838296_4506747547514121753_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Cqyol9mWA1sQ7kNvwHAiGhS&_nc_oc=AdqqyquxVGhbSvXKVcnz_WUZAGBGEXloshIIiWoD8HgTydqPB09w0QjyZKsYHPIFojF9Sd2kN3UL2hsNPfZJxBXR&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AERNI6uU-QbSxNzhAF5KCoLB3Dtm-EF31ozqfFXEaRnUA&oe=69F28A9F"
+                        alt="Psicóloga Mariana" class="psy-img">
+                </div>
+                <div class="text-content" style="order: 2;">
+                    <h2 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 0.5rem;">Psicóloga Mariana
+                    </h2>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1.5rem;">CRP: 05/XXXXX</p>
+                    <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.8;">
+                        Mariana tem como propósito facilitar o desenvolvimento pessoal e a resiliência. Através de
+                        intervenções terapêuticas acolhedoras e baseadas em evidências, ela busca ajudar seus pacientes
+                        a superar crises, traumas, dificuldades de relacionamento e auxiliar na regulação emocional
+                        assertiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psicóloga Erika -->
+    <section class="reveal" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="psychologist-grid">
+                <div class="text-content" style="order: 1;">
+                    <h2 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 0.5rem;">Psicóloga Erika
+                    </h2>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1.5rem;">CRP: 05/XXXXX</p>
+                    <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.8;">
+                        A psicóloga Erika trabalha na ressignificação de conflitos e na construção de caminhos mais
+                        saudáveis para a mente. Sua abordagem acolhedora visa o equilíbrio mental, a quebra de crenças
+                        limitantes e a melhoria significativa na qualidade de vida e nas relações interpessoais de quem
+                        a procura.
+                    </p>
+                </div>
+                <div class="img-content" style="order: 2;">
+                    <!-- Nota: Coloque a foto da profissional na pasta assets/img/ -->
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/657162834_2092403388371092_1874498880489697030_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=AQFCKuM8WloQ7kNvwGl9VQc&_nc_oc=AdoEWeUSoDEjq3GrA_4iJOeDDluI3VXsw_dTLrREDETqZRSbNf2Dv2SUzKmBhPo-OSn8LiG5czKiCUoSCdhZz6SY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AEtsA3dH_tllWS9pH1d4h6VS7lIVANvB425a6YzfXPREg&oe=69F471A3"
+                        alt="Psicóloga Erika" class="psy-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo e Valores -->
+    <section class="reveal" style="padding: 5rem 0; background-color: var(--text-dark); color: #fff;">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 2rem;">Como Funciona o Processo Terapêutico?</h2>
+            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.8;">
+                O processo terapêutico é um espaço contínuo de colaboração entre você e a psicóloga. O objetivo
+                principal da nossa clínica é oferecer um ambiente livre de julgamentos, totalmente sigiloso, humanizado
+                e acolhedor para que você expresse o que sente.
+            </p>
+            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.8;">
+                Através de encontros regulares, buscamos identificar padrões de pensamento, regular emoções difíceis e
+                promover mudanças comportamentais positivas, sempre alinhados aos seus objetivos pessoais de melhoria de
+                vida.
+            </p>
+
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 1rem;">Valor da Consulta</h3>
+                <p style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">
+                    R$ 150,00</p>
+                <p style="color: rgba(255,255,255,0.6); margin-bottom: 2.5rem;">Por sessão de atendimento psicológico
+                </p>
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary"
+                    style="font-size: 1.1rem; padding: 1rem 2.5rem;">Agendar Minha Sessão</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repaginado Footer e Float WhatsApp -->
+    <a href="https://wa.me/5521980345623" target="_blank" class="whatsapp-float">
+        <svg width="35" height="35" fill="#fff" viewBox="0 0 24 24">
+            <path
+                d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+            <path
+                d="M16.37 14.28c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-1.14-.54-2.18-1.22-2.94-2.16-.16-.21-.02-.32.1-.44.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.28-.22.22-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.62 4.13 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+        </svg>
+        <span class="tooltip">Fale com a Clínica</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1 -->
+                <div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2rem;">
+                        <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                            style="height: 35px; display: block;">
+                        <span style="font-weight:600; font-size:1.1rem; color:var(--primary-color);">NEUROPSY
+                            SAÚDE</span>
+                    </div>
+                    <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">Clínica
+                        especializada em avaliação e consulta psicológica em Niterói.<br>Atendimento humanizado para
+                        todas as idades.</p>
+                    <p style="color: #b0b0b0; font-size: 0.85rem; line-height: 1.6;">
+                        Clínica Neurocognitiva LTDA<br>
+                        CNPJ: 52.248.724/0001-52<br>
+                        Responsável Técnica: Psicóloga Charla Menezes<br>
+                        CRP 05/54915
+                    </p>
+                </div>
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Contato</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span><strong>Niterói:</strong> Rua Dr. Bormann, 23<br>Sala 505, Centro<br><br><strong>Rio
+                                    de Janeiro:</strong> Copacabana</span>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <a href="tel:+5521980345623" style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;" class="hover-cyan">(21) 98034-5623</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contato@neuropsysaude.com.br"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">contato@neuropsysaude.com.br</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Segunda a sábado<br>das 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Links Rápidos
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size:0.9rem;">
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Quem Somos</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Avaliação
+                                Neuropsicológica</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="consulta.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Consulta
+                                Psicológica</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Testes Online</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contato.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Contato</a></li>
+                    </ul>
+
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem; font-weight:600;">Redes Sociais</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/neuropsy.saude" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3.5rem; padding-top: 2rem;">
+                <p style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem;">Neuropsy Saúde &copy; 2025 – Todos
+                    os direitos reservados.</p>
+                <p style="color: #b0b0b0; font-size: 0.9rem;">Desenvolvido por <a
+                        href="https://es-d-1039143120260320-019cf883-cff9-7add-9d25-e0ee03ba00ce.codepen.dev/"
+                        target="_blank"
+                        style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;"
+                        class="hover-cyan">Lanne.pro</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Neuropsicóloga</title>
+    <link rel="icon" type="image/png"
+        href="https://scontent.xx.fbcdn.net/v/t1.15752-9/656058857_2411639205937633_6964659769190626380_n.png?stp=dst-png_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=nf0dukbsJS0Q7kNvwFUJ9l6&_nc_oc=AdqXOvCdbKMGTRn9Yo-UIWf5e4A2waIP5VsG98GhHodCr6CPS1_GkOr_Duf0MkAyrRDkuvZlLpwMVhUjmQ7Q8qMq&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD4wH8gMELA1QSxSWNDrnAa7pBHihCGKFHz6bdeVzqSTi9Tw&oe=69E7E17B" />
+    <meta name="google-site-verification" content="wskdXQHWA5rcVQ7OXGYjw40_NRdToY3A0wnGq8U7byQ" />
+    <meta name="description"
+        content="Entre em contato, confira informações de endereço e horários de atendimento da clínica de Neuropsicologia.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .contact-hero {
+            padding: 8rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 3rem 0;
+            align-items: start;
+        }
+
+        .contact-info-block {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info-block h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info-block p,
+        .contact-info-block a {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Formulário elegante */
+        .form-panel {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: inherit;
+            background: #FAFAFA;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(106, 138, 112, 0.1);
+            background: #FFF;
+        }
+
+        .btn-submit {
+            width: 100%;
+        }
+
+        /* Mapa */
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                    style="height: 45px; display: block;">
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--primary-color);">Neuropsy
+                    Saúde</span>
+            </a>
+            <div class="menu-toggle"><span></span><span></span><span></span></div>
+            <nav class="nav-links">
+                <a href="index.html" class="link">Início</a>
+                <a href="sobre.html" class="link">Sobre</a>
+                <div class="nav-item-dropdown">
+                    <span class="link" style="cursor: pointer;">Serviços <svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></span>
+                    <div class="dropdown-menu">
+                        <a href="avaliacao.html" class="dropdown-item">Avaliação Neuropsicológica</a>
+                        <a href="consulta.html" class="dropdown-item">Consulta Psicológica</a>
+                    </div>
+                </div>
+                <a href="contato.html" class="link active">Contato</a>
+                <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary" style="margin-left: 1rem; display:inline-flex; align-items:center; gap:8px;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z"/></svg> Agendar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-hero reveal">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p style="color: var(--text-light); margin-top: 1rem;">Estou à disposição para tirar dúvidas e realizar o
+                seu agendamento.</p>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="contact-grid">
+
+            <!-- Lado Esquerdo: Informações -->
+            <div class="contact-data">
+
+                <div class="contact-info-block">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        Contato Direto
+                    </h4>
+                    <p>Telefone / WhatsApp: <a href="https://wa.me/5521980345623" target="_blank">(21) 98034-5623</a>
+                    </p>
+                    <p>E-mail: <a href="mailto:contato@exemplo.com">contato@exemplo.com</a></p>
+                </div>
+
+                <div class="contact-info-block">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        Disponibilidade de Atendimento
+                    </h4>
+                    <p><strong>Modalidades:</strong> Atendimento Presencial e Online.</p>
+                    <p><strong>Dias:</strong> Segunda a Sexta</p>
+                    <p><strong>Horários:</strong> Manhã e Tarde (Atendimento exclusivo com horário marcado.)</p>
+                    <p>O agendamento pode ser feito preenchendo o formulário ou diretamente via WhatsApp.</p>
+                </div>
+
+                <div class="contact-info-block">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Localização
+                    </h4>
+                    <p><strong>Niterói:</strong> R. Dr. Borman, 23 - Centro, Niterói - RJ</p>
+                    <p><strong>Rio de Janeiro:</strong> Copacabana - RJ</p>
+                    <br>
+                    <div class="map-container">
+                        <!-- Embed interativo do Google Maps -->
+                        <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?q=R.%20Dr.%20Borman,%2023%20-%20Centro,%20Niter%C3%B3i%20-%20RJ,%2024020-320&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <a href="https://maps.google.com/?q=R.+Dr.+Borman,+23+-+Centro,+Niterói+-+RJ,+24020-320"
+                        target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Abrir
+                        Rota / Gps</a>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Formulário -->
+            <div class="contact-form glass-panel form-panel">
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Envie sua mensagem</h3>
+                <form action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Formulário enviado com sucesso!');">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(21) 98034-5623" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Como posso ajudar?</label>
+                        <textarea id="mensagem" name="mensagem" rows="5"
+                            placeholder="Descreva brevemente o motivo de seu contato..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Enviar Mensagem</button>
+
+                    <div
+                        style="text-align: center; margin-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                        <span
+                            style="display: block; margin-bottom: 0.5rem; color: var(--text-light); font-size: 0.9rem;">Ou
+                            se preferir um contato mais rápido</span>
+                        <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary btn-submit"
+                            style="background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);">
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Repaginado Footer e Float WhatsApp -->
+    <a href="https://wa.me/5521980345623" target="_blank" class="whatsapp-float">
+        <svg width="35" height="35" fill="#fff" viewBox="0 0 24 24">
+            <path
+                d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+            <path
+                d="M16.37 14.28c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-1.14-.54-2.18-1.22-2.94-2.16-.16-.21-.02-.32.1-.44.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.28-.22.22-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.62 4.13 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+        </svg>
+        <span class="tooltip">Fale com a Psicóloga</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1 -->
+                <div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2rem;">
+                        <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
+                            style="height: 35px; display: block;">
+                        <span style="font-weight:600; font-size:1.1rem; color:var(--primary-color);">NEUROPSY
+                            SAÚDE</span>
+                    </div>
+                    <p style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">Clínica
+                        especializada em avaliação neuropsicológica em Niterói.<br>Atendimento humanizado para todas as
+                        idades.</p>
+                    <p style="color: #b0b0b0; font-size: 0.85rem; line-height: 1.6;">
+                        Clínica Neurocognitiva LTDA<br>
+                        CNPJ: 52.248.724/0001-52<br>
+                        Responsável Técnica: Psicóloga Charla Menezes<br>
+                        CRP 05/54915
+                    </p>
+                </div>
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Contato</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span><strong>Niterói:</strong> Rua Dr. Bormann, 23<br>Sala 505, Centro<br><br><strong>Rio
+                                    de Janeiro:</strong> Copacabana</span>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <a href="tel:+5521980345623" style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;" class="hover-cyan">(21) 98034-5623</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 1.2rem; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:contato@neuropsysaude.com.br"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;"
+                                class="hover-cyan">contato@neuropsysaude.com.br</a>
+                        </li>
+                        <li style="display: flex; gap: 12px; color: #e0e0e0; font-size: 0.9rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Segunda a sábado<br>das 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem; font-weight:600;">Links Rápidos
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size:0.9rem;">
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Quem Somos</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Serviços</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="sobre.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Psicóloga
+                                Charla</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="avaliacao.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Testes Online</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contato.html" class="hover-cyan"
+                                style="color: #e0e0e0; text-decoration: none; transition: color 0.3s;">Contato</a></li>
+                    </ul>
+
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem; font-weight:600;">Redes Sociais</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/neuropsy.saude" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon"
+                            style="display:flex; align-items:center; justify-content:center; width: 36px; height: 36px; background: rgba(12,166,150,0.1); color: var(--primary-color); border-radius: 8px; transition: all 0.3s;"><svg
+                                width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3.5rem; padding-top: 2rem;">
+                <p style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem;">Neuropsy Saúde &copy; 2025 – Todos
+                    os direitos reservados.</p>
+                <p style="color: #b0b0b0; font-size: 0.9rem;">Desenvolvido por <a
+                        href="https://es-d-1039143120260320-019cf883-cff9-7add-9d25-e0ee03ba00ce.codepen.dev/"
+                        target="_blank"
+                        style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;"
+                        class="hover-cyan">Lanne.pro</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Cores Principais - Paleta da Referência */
+  --bg-color: #F4F7F6; /* Fundo claro com toque clean */
+  --surface-color: #FFFFFF; /* Fundo dos cards brancos */
+  --primary-color: #0CA696; /* Teal / Verde Água vibrante */
+  --primary-hover: #098D7F;
+  --secondary-color: #BBE3DF; /* Destaques muito suaves */
+  --text-dark: #03201A; /* Verde muito escuro para títulos e footer */
+  --text-light: #5A706C; /* Cinza esverdeado para textos */
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  --border-radius: 16px;
+  --border-radius-lg: 24px;
+  
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-dark);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}
+
+/* Classes de Painel / Card */
+.glass-panel {
+  background: var(--surface-color);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Header & Nav */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 1000;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a.link {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.nav-links a.link:hover, .nav-links a.link.active {
+  color: var(--primary-color);
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--text-dark);
+  transition: var(--transition);
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(106, 138, 112, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106, 138, 112, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Sections */
+section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 8.5rem;
+  padding-bottom: 4rem;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text .crp {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-image {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.hero-img-wrapper {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.hero-img-wrapper img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--secondary-color);
+  z-index: -1;
+}
+
+/* Localização (Minimal Hero Strip) */
+.location-strip {
+  padding: var(--spacing-md) 0;
+  background: var(--surface-color);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.location-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.loc-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loc-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(106, 138, 112, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+.loc-text h4 {
+  font-size: 1rem;
+}
+.loc-text p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.loc-btn {
+  font-size: 0.9rem;
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+/* Breve O que Oferece */
+.intro-service {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.intro-service h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.intro-service p {
+  font-size: 1.15rem;
+}
+
+/* Benefícios */
+.benefits-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg) auto;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.4s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+}
+
+.benefit-card h4 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+/* CTA Final */
+.cta-section {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(106, 138, 112, 0.05), rgba(211, 193, 179, 0.1));
+  padding: var(--spacing-xl) 0;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.cta-section .btn-group {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--text-dark);
+  padding: var(--spacing-lg) 0 2rem 0;
+  color: #E6EEEE;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+.footer-col p, .footer-col a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.footer-col a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Animações Iniciais Observer */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Service / Interactive Cards */
+.service-card {
+  background: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(12, 166, 150, 0.08);
+}
+.service-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.service-content {
+  padding: 2.5rem 2rem 2rem 2rem;
+  position: relative;
+  flex-grow: 1;
+}
+.service-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--bg-color);
+  border: 2px solid var(--surface-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  color: var(--primary-color);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -26px;
+  left: 2rem;
+}
+.service-content h4 {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+/* Wide Test Cards */
+.test-card {
+  display: flex;
+  align-items: center;
+  background: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  border-left: 5px solid var(--primary-color);
+}
+.test-card-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+.test-card-content {
+  flex-grow: 1;
+}
+.test-card h4 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Checkmark List */
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  color: var(--text-light);
+  margin-bottom: 1.2rem;
+}
+.check-list li svg {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+/* WhatsApp Float Component */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: #25d366; color: #fff; border-radius: 50%; text-align: center; font-size: 35px; box-shadow: 2px 5px 15px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: all 0.3s ease; animation: pulse-wa 2s infinite; }
+.whatsapp-float:hover { transform: translateY(-5px) scale(1.05); background-color: #1ebe57; box-shadow: 2px 10px 25px rgba(37,211,102,0.4); }
+@keyframes pulse-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.whatsapp-float .tooltip { position: absolute; right: 80px; background: var(--surface-color); color: var(--text-dark); padding: 8px 15px; border-radius: 8px; font-size: 0.95rem; font-weight: 500; box-shadow: 0 5px 15px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateX(10px); transition: all 0.3s ease; white-space: nowrap; border: 1px solid rgba(0,0,0,0.05); }
+.whatsapp-float .tooltip::after { content: ''; position: absolute; top: 50%; right: -6px; transform: translateY(-50%); border-width: 6px 0 6px 6px; border-style: solid; border-color: transparent transparent transparent var(--surface-color); }
+.whatsapp-float:hover .tooltip { opacity: 1; visibility: visible; transform: translateX(0); }
+
+/* Footer Hover Utilities */
+.hover-cyan:hover, .social-icon:hover { color: var(--primary-color) !important; }
+.social-icon:hover { background: rgba(12,166,150,0.2) !important; transform: translateY(-3px); }
+
+/* Process Layout & Gallery */
+.process-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.process-gallery { position: relative; height: 400px; }
+.p-img { position: absolute; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 4px solid #fff; transition: transform 0.4s ease; cursor: pointer; }
+.p-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p-img-1 { width: 60%; height: 250px; top: 0; left: 0; z-index: 3; }
+.p-img-2 { width: 50%; height: 200px; bottom: 0; left: 15%; z-index: 4; }
+.p-img-3 { width: 55%; height: 280px; top: 10%; right: 0; z-index: 2; }
+.hover-zoom:hover { transform: scale(1.05); z-index: 10; }
+
+/* Interactive Steps */
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.step-card { background: var(--bg-color); padding: 2.5rem; border-radius: var(--border-radius-lg); position: relative; transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.03); }
+.step-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(12, 166, 150, 0.1); background: #fff; }
+.step-num { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 3rem; font-weight: 700; color: rgba(12, 166, 150, 0.1); font-family: 'Outfit', sans-serif; transition: color 0.4s ease; }
+.step-card:hover .step-num { color: rgba(12, 166, 150, 0.2); }
+.step-icon { width: 60px; height: 60px; background: rgba(12, 166, 150, 0.1); color: var(--primary-color); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: all 0.4s ease; }
+.step-card:hover .step-icon { background: var(--primary-color); color: #fff; transform: scale(1.1); }
+.step-card h4 { font-size: 1.25rem; color: var(--text-dark); margin-bottom: 1rem; }
+
+/* FAQ Accordion */
+.faq-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+.faq-accordion { display: flex; flex-direction: column; gap: 1rem; }
+.faq-item { background: var(--surface-color); border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+.faq-question { width: 100%; text-align: left; padding: 1.5rem; background: none; border: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; color: var(--text-dark); font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.3s ease; }
+.faq-question:hover { color: var(--primary-color); }
+.faq-question svg { transition: transform 0.3s ease; color: var(--primary-color); }
+.faq-question.active svg { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: rgba(12, 166, 150, 0.02); }
+.faq-answer p { padding: 0 1.5rem 1.5rem 1.5rem; color: var(--text-light); line-height: 1.6; }
+
+/* Vertical Timeline */
+.vertical-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 40px;
+}
+.vertical-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40px;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 2px;
+  background: rgba(12, 166, 150, 0.2);
+}
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  position: relative;
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+  margin-left: 20px;
+}
+.timeline-item:hover {
+  transform: translateX(10px);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(12, 166, 150, 0.08);
+  border-color: rgba(12, 166, 150, 0.1);
+}
+.timeline-dot {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: 'Outfit', sans-serif;
+  flex-shrink: 0;
+  z-index: 2;
+  box-shadow: 0 0 0 6px var(--bg-color);
+  position: absolute;
+  left: -20px;
+  transform: translateX(-50%);
+  top: 2rem;
+  transition: all 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 0 6px #fff;
+  transform: translateX(-50%) scale(1.1);
+}
+.timeline-content { width: 100%; }
+.timeline-content h4 { font-size: 1.25rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+.timeline-content p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .process-layout { grid-template-columns: 1fr; text-align: center; gap: 2rem;}
+  .check-list li { justify-content: center; }
+  .faq-container { grid-template-columns: 1fr; gap: 2rem; }
+  .faq-intro { text-align: center; }
+  .faq-intro p { padding-right: 0; margin: 0 auto 2rem auto; }
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text p {
+    margin: 0 auto 2rem auto;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .hero-text .crp {
+    justify-content: center;
+  }
+  .location-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background: var(--surface-color);
+    backdrop-filter: blur(20px);
+    width: 250px;
+    height: calc(100vh - 70px);
+    padding: 2rem;
+    transition: 0.3s;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+  }
+  .nav-links.active {
+    right: 0;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+  .test-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .test-card-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .logo span {
+    font-size: 1.1rem !important;
+  }
+  .timeline-item {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  .timeline-dot {
+    top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo span {
+    display: none !important;
+  }
+  section {
+    padding: 3.5rem 0;
+  }
+  .hero {
+    padding-top: 5rem;
+  }
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
+  .vertical-timeline {
+    padding-left: 20px;
+  }
+  .vertical-timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    margin-left: 10px;
+  }
+  .timeline-dot {
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    box-shadow: 0 0 0 4px var(--bg-color);
+  }
+  .timeline-item:hover .timeline-dot {
+    box-shadow: 0 0 0 4px #fff;
+  }
+  .p-img-1, .p-img-2, .p-img-3 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0; right: 0; top: 0; bottom: 0;
+    margin-bottom: 1rem;
+  }
+  .process-gallery {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Menu responsivo
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if(toggle && navLinks) {
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Header fixo muda ao rolar a página
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Observer para animação reveladora de elementos (fade-up)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Anima apenas uma vez
+            }
+        });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isOpen = question.classList.contains('active');
+
+            // Fecha outros abertos
+            faqQuestions.forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.style.maxHeight = null;
+            });
+
+            // Se não estava aberto, abre o clicado
+            if (!isOpen) {
+                question.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+});
+
+
+class Particle {
+    constructor(canvas, ctx) {
+        this.canvas = canvas;
+        this.ctx = ctx;
+        this.reset();
+        
+        // Espalhamento inicial pelo canvas
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.width;
+    }
+
+    reset() {
+        // Posição será influenciada pelas forças, não reseta ao clicar
+        this.size = Math.random() * 2.5 + 1.5; // Bolinhas pequenas
+        
+        // Tons pasteis (azul, lilás, verde suave, rosa suave, laranja suave, amarelo claro)
+        const colors = [
+            'rgba(163, 196, 243, 0.7)', // azul
+            'rgba(209, 196, 233, 0.7)', // lilás
+            'rgba(161, 193, 166, 0.7)', // verde
+            'rgba(248, 187, 208, 0.7)', // rosa
+            'rgba(255, 204, 128, 0.7)', // laranja
+            'rgba(255, 249, 196, 0.7)'  // amarelo
+        ];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        
+        this.vx = (Math.random() - 0.5) * 1;
+        this.vy = (Math.random() - 0.5) * 1;
+        
+        // Variabilidade do comportamento (personalidade da bolinha)
+        this.friction = Math.random() * 0.04 + 0.92;
+        this.mouseInfluence = Math.random() * 0.003 + 0.001; // Efeito reduzido e mais lento 
+        this.wander = Math.random() * 0.5 + 0.2; // Desvio próprio para organicidade
+        this.angle = Math.random() * Math.PI * 2;
+    }
+
+    update(mouseX, mouseY) {
+        // Se houver mouse, atrai levemente
+        if (mouseX && mouseY) {
+            const dx = mouseX - this.x;
+            const dy = mouseY - this.y;
+            
+            // Força de atração suave
+            this.vx += dx * this.mouseInfluence;
+            this.vy += dy * this.mouseInfluence;
+        }
+
+        // Movimento orgânico extra (flutuação)
+        this.angle += 0.05;
+        this.vx += Math.cos(this.angle) * this.wander * 0.1;
+        this.vy += Math.sin(this.angle) * this.wander * 0.1;
+
+        // Atrito para não acelerar infinitamente
+        this.vx *= this.friction;
+        this.vy *= this.friction;
+
+        // Atualiza posição
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Evita aglomeração com um limitador de velocidade extrema
+        const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        const maxSpeed = 1.8; // Velocidade máxima muito menor
+        if (speed > maxSpeed) {
+            this.vx = (this.vx / speed) * maxSpeed;
+            this.vy = (this.vy / speed) * maxSpeed;
+        }
+    }
+
+    draw() {
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        
+        // Gradiente radial para efeito premium
+        const grad = this.ctx.createRadialGradient(
+            this.x - this.size/4, 
+            this.y - this.size/4, 
+            0, 
+            this.x, 
+            this.y, 
+            this.size
+        );
+        grad.addColorStop(0, '#ffffff'); // Centro iluminado
+        grad.addColorStop(1, this.color); // Borda colorida
+
+        this.ctx.fillStyle = grad;
+        this.ctx.fill();
+        this.ctx.closePath();
+    }
+}
+
+class ParticleSystem {
+    constructor() {
+        this.canvas = document.createElement('canvas');
+        this.ctx = this.canvas.getContext('2d');
+        
+        this.particles = [];
+        this.mouseX = null;
+        this.mouseY = null;
+        
+        this.initCanvas();
+        this.initParticles();
+        this.addEventListeners();
+        
+        this.animate();
+    }
+
+    initCanvas() {
+        this.canvas.style.position = 'fixed';
+        this.canvas.style.top = '0';
+        this.canvas.style.left = '0';
+        this.canvas.style.width = '100vw';
+        this.canvas.style.height = '100vh';
+        this.canvas.style.pointerEvents = 'none';
+        this.canvas.style.zIndex = '-999'; // Fundo total
+        document.body.appendChild(this.canvas);
+        
+        this.resize();
+    }
+
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+
+    initParticles() {
+        // Reduz quantidade em celulares para performance
+        const particleCount = window.innerWidth > 768 ? 70 : 30;
+        this.particles = [];
+        for (let i = 0; i < particleCount; i++) {
+            this.particles.push(new Particle(this.canvas, this.ctx));
+        }
+    }
+
+    addEventListeners() {
+        window.addEventListener('resize', () => {
+            this.resize();
+            this.initParticles(); // Reinicia com contagem certa para tela
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            this.mouseX = e.clientX;
+            this.mouseY = e.clientY;
+        });
+
+        // Solta as bolinhas quando o mouse sai da tela
+        document.addEventListener('mouseleave', () => {
+            this.mouseX = null;
+            this.mouseY = null;
+        });
+    }
+
+    applySeparation() {
+        // Lógica de "cardume" - Separação
+        for (let i = 0; i < this.particles.length; i++) {
+            for (let j = i + 1; j < this.particles.length; j++) {
+                const p1 = this.particles[i];
+                const p2 = this.particles[j];
+                
+                const dx = p1.x - p2.x;
+                const dy = p1.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                const minDist = 35; // Distância que elas tentam manter
+                
+                if (dist < minDist && dist > 0) {
+                    const force = (minDist - dist) / minDist;
+                    p1.vx += (dx / dist) * force * 0.5;
+                    p1.vy += (dy / dist) * force * 0.5;
+                    p2.vx -= (dx / dist) * force * 0.5;
+                    p2.vy -= (dy / dist) * force * 0.5;
+                }
+            }
+        }
+    }
+
+    animate() {
+        // Fundo transparente com leve rastro (trail blur effect)
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        this.applySeparation();
+
+        this.particles.forEach(p => {
+            p.update(this.mouseX, this.mouseY);
+            // Rebater nas bordas suavemente se mouseX não existir
+            if (!this.mouseX) {
+               if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+               if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+            }
+            p.draw();
+        });
+
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// Inicializa quando o DOM carregar
+document.addEventListener('DOMContentLoaded', () => {
+    new ParticleSystem();
+});
+
