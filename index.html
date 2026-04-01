@@ -60,6 +60,10 @@
         overflow: hidden;
         background: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #f4f7fb 60%, #e2e8f0 100%);
     ">
+        <!-- Bokeh Background Spots -->
+        <div style="position:absolute; top:10%; left:15%; width:300px; height:300px; background:rgba(12,166,150,0.08); filter:blur(100px); border-radius:50%; pointer-events:none; z-index:1;"></div>
+        <div style="position:absolute; bottom:15%; right:10%; width:400px; height:400px; background:rgba(98,47,119,0.06); filter:blur(120px); border-radius:50%; pointer-events:none; z-index:1;"></div>
+        <div style="position:absolute; top:40%; left:50%; transform:translateX(-50%); width:500px; height:300px; background:rgba(249,218,95,0.04); filter:blur(130px); border-radius:50%; pointer-events:none; z-index:1;"></div>
         <!-- Canvas para efeito de neurônios (Filtro para Darken Theme) -->
         <canvas id="neuronCanvas"
             style="position:absolute;inset:0;z-index:2;pointer-events:none;width:100%;height:100%; filter: invert(1) hue-rotate(180deg); opacity: 0.7;"></canvas>
@@ -73,27 +77,28 @@
         <!-- CÉREBRO ESQUERDO -->
         <div id="brainLeft" class="brain-side" style="
             position: absolute;
-            left: -15%;
+            left: -12%;
             top: 50%;
             transform: translateY(-50%);
-            width: 50%;
-            max-width: 600px;
-            opacity: 0.45;
+            width: 55%;
+            max-width: 750px;
+            opacity: 0.85;
             z-index: 3;
             pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
         ">
             <div class="brain-glow" style="
-                position:absolute; inset:-20%;
-                background: radial-gradient(ellipse at center, rgba(255,100,150,0.15) 0%, rgba(138,60,200,0.05) 45%, transparent 70%);
-                filter: blur(45px); z-index:0;
+                position:absolute; inset:-5%;
+                background: radial-gradient(ellipse at center, rgba(255,80,150,0.25) 0%, rgba(138,60,200,0.1) 45%, transparent 70%);
+                filter: blur(35px); z-index:0;
                 animation: brainPulse 4s ease-in-out infinite;
             "></div>
             <img src="assets/img/brain-hq.png" alt="Cérebro Neural Esquerdo" class="brain-img" style="
                     width: 100%; display: block; position: relative; z-index:1;
-                    mask-image: radial-gradient(ellipse 70% 60% at left center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
-                    -webkit-mask-image: radial-gradient(ellipse 70% 60% at left center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
-                    filter: drop-shadow(0 0 20px rgba(255,100,180,0.2)) brightness(1.05) saturate(1.5) hue-rotate(-15deg);
-                    transition: filter 0.5s ease, transform 0.6s ease;
+                    mask-image: radial-gradient(ellipse 75% 65% at left center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    -webkit-mask-image: radial-gradient(ellipse 75% 65% at left center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    filter: drop-shadow(0 0 40px rgba(255,50,130,0.3)) brightness(1.2) saturate(1.6) hue-rotate(-5deg);
+                    transition: all 0.6s ease;
                     transform-origin: right center;
                 ">
         </div>
@@ -101,27 +106,28 @@
         <!-- CÉREBRO DIREITO -->
         <div id="brainRight" class="brain-side" style="
             position: absolute;
-            right: -15%;
+            right: -12%;
             top: 50%;
             transform: translateY(-50%);
-            width: 50%;
-            max-width: 600px;
-            opacity: 0.45;
+            width: 55%;
+            max-width: 750px;
+            opacity: 0.85;
             z-index: 3;
             pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
         ">
             <div class="brain-glow" style="
-                position:absolute; inset:-20%;
-                background: radial-gradient(ellipse at center, rgba(12,200,200,0.15) 0%, rgba(60,100,200,0.05) 45%, transparent 70%);
-                filter: blur(45px); z-index:0;
+                position:absolute; inset:-5%;
+                background: radial-gradient(ellipse at center, rgba(12,220,220,0.25) 0%, rgba(60,100,200,0.1) 45%, transparent 70%);
+                filter: blur(35px); z-index:0;
                 animation: brainPulse 4s ease-in-out infinite 2s;
             "></div>
             <img src="assets/img/brain-hq.png" alt="Cérebro Neural Direito" class="brain-img" style="
                     width: 100%; display: block; position: relative; z-index:1;
-                    mask-image: radial-gradient(ellipse 70% 60% at right center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
-                    -webkit-mask-image: radial-gradient(ellipse 70% 60% at right center, black 10%, rgba(0,0,0,0.4) 50%, transparent 85%);
-                    filter: drop-shadow(0 0 20px rgba(0,220,220,0.2)) brightness(1.05) saturate(1.5) hue-rotate(15deg);
-                    transition: filter 0.5s ease, transform 0.6s ease;
+                    mask-image: radial-gradient(ellipse 75% 65% at right center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    -webkit-mask-image: radial-gradient(ellipse 75% 65% at right center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    filter: drop-shadow(0 0 40px rgba(0,220,240,0.3)) brightness(1.2) saturate(1.6) hue-rotate(5deg);
+                    transition: all 0.6s ease;
                     transform-origin: left center;
                 ">
         </div>
@@ -144,37 +150,35 @@
             <!-- Pill -->
             <div class="reveal" style="
                 display:inline-flex; align-items:center; gap:10px;
-                background:rgba(0,0,0,0.03); border:1px solid rgba(0,0,0,0.08);
-                backdrop-filter:blur(14px); padding:6px 18px; border-radius:50px; margin-bottom:1rem;
+                background:rgba(255,255,255,0.6); border:1px solid rgba(12,166,150,0.15);
+                backdrop-filter:blur(10px); padding:8px 22px; border-radius:50px; margin-bottom:1.5rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             ">
                 <div
-                    style="width:8px;height:8px;border-radius:50%;background:#0ca696;box-shadow:0 0 10px rgba(12,166,150,0.5);animation:blinkCin 2s infinite;">
+                    style="width:6px;height:6px;border-radius:50%;background:#0ca696;box-shadow:0 0 10px rgba(12,166,150,0.5);animation:blinkCin 2.5s infinite;">
                 </div>
                 <span
-                    style="color:#2d1557;font-size:0.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-family:'Outfit',sans-serif;">Especialista
-                    em Neuropsicologia</span>
+                    style="color:#2d1557;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-family:'Outfit',sans-serif;">Especialista em Neuropsicologia</span>
             </div>
 
             <!-- H1 -->
             <h1 class="reveal" style="
                 font-family:'Outfit',sans-serif;
-                font-size:clamp(2.5rem,6vw,5.5rem);
+                font-size:clamp(3.5rem,8vw,6rem);
                 font-weight:900;
-                line-height:0.95;
-                margin-bottom:0.8rem;
-                letter-spacing:-1.5px;
+                line-height:0.9;
+                margin-bottom:1.5rem;
+                letter-spacing:-2px;
             ">
                 <span style="
                     display:block;
-                    background:linear-gradient(130deg,#1e0535 0%,#622f77 40%,#a78de8 80%);
+                    background:linear-gradient(135deg,#3B1D5F 0%,#6A3C8B 100%);
                     -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-                    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.05));
                 ">Neuropsy</span>
                 <span style="
                     display:block;
-                    background:linear-gradient(130deg,#0ca696 0%,#087768 50%,#F9DA5F 100%);
+                    background:linear-gradient(135deg,#0CA696 0%,#55C5B5 100%);
                     -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-                    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.05));
                 ">Saúde</span>
             </h1>
 
@@ -223,29 +227,31 @@
 
             <!-- Estatísticas -->
             <div class="reveal"
-                style="display:flex;gap:2rem;border-top:1px solid rgba(0,0,0,0.1);padding-top:1.2rem;flex-wrap:wrap;justify-content:center;">
-                <div style="padding:0.2rem 1rem;">
+                style="display:flex;gap:3rem;border-top:1px solid rgba(0,0,0,0.06);padding-top:2rem;flex-wrap:nowrap;justify-content:center;margin-top:1rem;">
+                <div style="text-align:center;">
                     <div
-                        style="font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:#1e0535;line-height:1;">
+                        style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:800;color:#1e0535;line-height:1;">
                         2000+</div>
                     <div
-                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        style="color:rgba(0,0,0,0.45);font-size:0.75rem;margin-top:6px;letter-spacing:0.5px;font-weight:600;text-transform:uppercase;">
                         Avaliações reais</div>
                 </div>
-                <div style="padding:0.2rem 1rem;">
+                <div style="width:1px; background:rgba(0,0,0,0.06); height:40px; align-self:center;"></div>
+                <div style="text-align:center;">
                     <div
-                        style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800;color:#1e0535;line-height:1.3;">
+                        style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800;color:#1e0535;line-height:1.2;margin-top:4px;">
                         CRP 05/54915</div>
                     <div
-                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        style="color:rgba(0,0,0,0.45);font-size:0.75rem;margin-top:6px;letter-spacing:0.5px;font-weight:600;text-transform:uppercase;">
                         Registro ativo</div>
                 </div>
-                <div style="padding:0.2rem 1rem;">
+                <div style="width:1px; background:rgba(0,0,0,0.06); height:40px; align-self:center;"></div>
+                <div style="text-align:center;">
                     <div
-                        style="font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:#1e0535;line-height:1;">
+                        style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:800;color:#1e0535;line-height:1;">
                         Niterói</div>
                     <div
-                        style="color:rgba(0,0,0,0.55);font-size:0.75rem;margin-top:4px;letter-spacing:0.5px;font-weight:500;">
+                        style="color:rgba(0,0,0,0.45);font-size:0.75rem;margin-top:6px;letter-spacing:0.5px;font-weight:600;text-transform:uppercase;">
                         Centro · RJ</div>
                 </div>
             </div>
@@ -517,7 +523,10 @@
                 <h2 style="font-size: 2.8rem; color: var(--primary-color); margin-bottom: 1.5rem; line-height: 1.1;">Avaliação Neuropsicológica</h2>
                 
                 <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
-                    A Avaliação Neuropsicológica é um mapeamento profundo que examina como o seu cérebro processa as informações do dia a dia. É um processo clínico minucioso desenhado para entender a forma como você pensa, sente, resolve problemas e se relaciona com o mundo.
+                    A Avaliação Neuropsicológica é um processo detalhado que investiga como o cérebro processa as informações no dia a dia. Trata-se de uma análise clínica cuidadosa, voltada para compreender a forma como você pensa, sente, resolve problemas e interage com o mundo ao seu redor. 
+                    
+                    Por meio de uma abordagem acolhedora e individualizada, nossos especialistas exploram o funcionamento cognitivo e comportamental utilizando instrumentos modernos e validados, aplicáveis tanto no formato presencial quanto em plataformas digitais interativas. O objetivo é proporcionar maior clareza diagnóstica e compreensão do seu funcionamento psicológico. 
+
                 </p>
                 <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
                     Por meio de uma investigação acolhedora do seu funcionamento cognitivo e comportamental, nossos especialistas utilizam instrumentos de ponta, aplicáveis tanto em formato presencial quanto em ferramentas interativas, para trazer clareza diagnóstica.
@@ -534,16 +543,7 @@
 
             <!-- Imagem Gerada ao Lado -->
             <div style="position: relative;">
-                <img src="assets/img/testes-online.png" alt="Testes Neuropsicológicos" style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
-                <div style="position: absolute; top: 20px; right: -20px; background: var(--surface-color); padding: 1rem; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; border: 1px solid rgba(12,166,150,0.1);">
-                    <div style="width: 40px; height: 40px; background: rgba(12,166,150,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600; font-size: 0.95rem; color: var(--text-dark);">Testagem Digital</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">Precisão Clínica</div>
-                    </div>
-                </div>
+                <img src="assets/img/online-tests-new.png" alt="Testes Neuropsicológicos" style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
             </div>
         </div>
     </section>
@@ -615,122 +615,16 @@
     <style>
         @media (max-width: 900px) {
             .container[style*="grid-template-columns: 1fr 1fr"] {
-                grid-template-columns: 1fr !important;
-                text-align: left;
-            }
-            .container[style*="grid-template-columns: 1fr 1fr"] img {
-                margin-top: 2rem;
-            }
+            grid-template-columns: 1fr !important;
+            text-align: left;
         }
-    </style>
+        .container[style*="grid-template-columns: 1fr 1fr"] img {
+            margin-top: 2rem;
+        }
+    }
+</style>
 
-    <!-- Seção Quem Somos (Missão, Visão e Valores) -->
-    <section class="reveal" style="padding: 5rem 0; background-color: var(--surface-color);">
-        <div class="container">
-            <h2 class="section-title" style="margin-bottom: 1rem; color: var(--text-dark);">Quem Somos</h2>
-            <p
-                style="text-align: center; color: var(--text-light); max-width: 800px; margin: 0 auto 4rem auto; font-size: 1.1rem; line-height: 1.6;">
-                A Neuropsy Saúde é uma clínica de psicologia em Niterói dedicada à avaliação neuropsicológica em todas
-                as idades. Liderada pela psicóloga Charla Menezes (CRP 05/54915), oferece diagnósticos precisos e
-                acompanhamento humanizado.
-            </p>
 
-            <div class="steps-grid" style="margin-top: 3rem;">
-                <!-- Card Missão -->
-                <div class="service-card"
-                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
-                    <div
-                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="6"></circle>
-                            <circle cx="12" cy="12" r="2"></circle>
-                        </svg>
-                    </div>
-                    <h4
-                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
-                        Missão</h4>
-                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Guiar pessoas em sua
-                        jornada neuropsicológica com excelência e acolhimento.</p>
-                </div>
-
-                <!-- Card Visão -->
-                <div class="service-card"
-                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
-                    <div
-                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                    </div>
-                    <h4
-                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
-                        Visão</h4>
-                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ser referência em
-                        avaliação neuropsicológica em Niterói e no Rio de Janeiro.</p>
-                </div>
-
-                <!-- Card Valores -->
-                <div class="service-card"
-                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
-                    <div
-                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h4
-                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
-                        Valores</h4>
-                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ética, empatia, inovação
-                        e compromisso com o bem-estar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- O que é a Neuropsicologia (Galeria Interativa) -->
-    <section id="ofereca" class="reveal">
-        <div class="container process-layout">
-            <div class="process-text">
-                <h3
-                    style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
-                    Avaliação Neuropsicológica</h3>
-                <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 1.5rem;">É um processo
-                    investigativo completo do funcionamento cognitivo, emocional e comportamental.</p>
-                <p style="font-size: 1.05rem; color: var(--text-light); margin-bottom: 2rem;">Utilizamos testes,
-                    ferramentas lúdicas e metodologias validadas para mapear sua atenção, memória, raciocínio e emoções.
-                    O objetivo é compreender cada pessoa de forma integral, auxiliando em diagnósticos ou elaborando
-                    planos de tratamento super assertivos.</p>
-                <ul class="check-list" style="margin-top: 0;">
-                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Acolhimento profundo e escuta</li>
-                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Ambiente preparado para seu foco</li>
-                    <li><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Entregas de laudos bem detalhados</li>
-                </ul>
-            </div>
-
-            <div class="process-gallery">
-                <div class="p-img p-img-1 hover-zoom"><img src="assets/img/av-proc-1.png"
-                        alt="Praticando a escuta empática na avaliação"></div>
-                <div class="p-img p-img-2 hover-zoom"><img src="assets/img/av-proc-2.png"
-                        alt="Materiais lúdicos e testes cognitivos de mesa"></div>
-                <div class="p-img p-img-3 hover-zoom"><img src="assets/img/av-proc-3.png"
-                        alt="Profissional com prancheta de análise neuropsicológica"></div>
-            </div>
-        </div>
-    </section>
 
 
 
@@ -739,7 +633,7 @@
         <div class="container">
             <div style="text-align: left; margin-bottom: 3rem;">
                 <span style="font-family: 'Outfit', sans-serif; color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Diagnósticos</span>
-                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;">Possíveis através da Avaliação</h2>
+                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;">Diagnoticos possíveis</h2>
                 <p style="color: var(--text-light); font-size: 1.05rem; max-width: 800px;">
                     Nosso compromisso é com diagnósticos precisos que respeitam a complexidade humana e abrem portas para tratamentos transformadores.
                 </p>
@@ -920,6 +814,95 @@
         </svg>
         <span class="tooltip">Fale com a Psicóloga</span>
     </a>
+
+    <!-- Seção Nosso Espaço -->
+    <section class="reveal" style="padding: 5rem 0; background-color: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 2rem; color: var(--text-dark);">Nosso Espaço</h2>
+            <div class="space-scroll-container" style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 1rem 0 2rem 0; scrollbar-width: thin; scrollbar-color: var(--primary-color) transparent; -webkit-overflow-scrolling: touch;">
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="assets/img/espaco-1.png" alt="Recepção" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="assets/img/espaco-2.png" alt="Sala de Atendimento" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="assets/img/espaco-3.png" alt="Escritório" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Quem Somos (Missão, Visão e Valores) -->
+    <section class="reveal" style="padding: 5rem 0; background-color: var(--surface-color);">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 1rem; color: var(--text-dark);">Quem Somos</h2>
+            <p
+                style="text-align: center; color: var(--text-light); max-width: 800px; margin: 0 auto 4rem auto; font-size: 1.1rem; line-height: 1.6;">
+                A Neuropsy Saúde é uma clínica de psicologia em Niterói dedicada à avaliação neuropsicológica em todas
+                as idades. Liderada pela psicóloga Charla Menezes (CRP 05/54915), oferece diagnósticos precisos e
+                acompanhamento humanizado.
+            </p>
+
+            <div class="steps-grid" style="margin-top: 3rem;">
+                <!-- Card Missão -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Missão</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Guiar pessoas em sua
+                        jornada neuropsicológica com excelência e acolhimento.</p>
+                </div>
+
+                <!-- Card Visão -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Visão</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ser referência em
+                        avaliação neuropsicológica em Niterói e no Rio de Janeiro.</p>
+                </div>
+
+                <!-- Card Valores -->
+                <div class="service-card"
+                    style="text-align: center; padding: 3rem 2rem; border-radius: 12px; background: #fff; border: 1px solid rgba(12, 166, 150, 0.2);">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: #fff;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">
+                        Valores</h4>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Ética, empatia, inovação
+                        e compromisso com o bem-estar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
