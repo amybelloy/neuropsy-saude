@@ -322,6 +322,32 @@
                 #brainRight {
                     display: none;
                 }
+
+                #hero-cinema h1 {
+                    font-size: clamp(2.5rem, 12vw, 3.5rem) !important;
+                    line-height: 1.1 !important;
+                }
+
+                #hero-cinema .container {
+                    padding: 4rem 1.5rem !important;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    min-height: 100vh;
+                }
+
+                /* Estatísticas vertical no mobile para não amontoar */
+                #hero-cinema .container > div:last-child {
+                    flex-direction: column !important;
+                    gap: 1.5rem !important;
+                    align-items: center;
+                }
+                #hero-cinema .container > div:last-child div {
+                    text-align: center !important;
+                }
+                #hero-cinema .container > div:last-child div[style*="background"] {
+                    display: none !important;
+                }
             }
         </style>
 
@@ -516,8 +542,8 @@
     </section>
 
     <!-- O que é Avaliação Neuropsicológica (NOVA) -->
-    <section class="reveal" style="padding: 6rem 0; background-color: var(--bg-color);">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+    <section class="reveal section-mobile-fix" style="padding: 6rem 0; background-color: var(--bg-color);">
+        <div class="container mobile-stack-centered" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
             <div>
                 <span style="font-family: 'Outfit', sans-serif; color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">O que é</span>
                 <h2 style="font-size: 2.8rem; color: var(--primary-color); margin-bottom: 1.5rem; line-height: 1.1;">Avaliação Neuropsicológica</h2>
@@ -614,10 +640,26 @@
     
     <style>
         @media (max-width: 900px) {
-            .container[style*="grid-template-columns: 1fr 1fr"] {
-            grid-template-columns: 1fr !important;
-            text-align: left;
+            .mobile-stack-centered {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+                gap: 2rem !important;
+            }
+            .section-mobile-fix {
+                padding: 4rem 0 !important;
+            }
+            .mobile-stack-centered blockquote {
+                border-left: none !important;
+                border-top: 3px solid var(--secondary-color);
+                padding: 1rem 0 !important;
+                margin-top: 2rem;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr !important;
+                padding: 0 1rem;
+            }
         }
+    </style>
         .container[style*="grid-template-columns: 1fr 1fr"] img {
             margin-top: 2rem;
         }
