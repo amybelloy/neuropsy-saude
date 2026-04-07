@@ -657,14 +657,59 @@ footer {
 .hover-zoom:hover { transform: scale(1.05); z-index: 10; }
 
 /* Interactive Steps */
-.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.step-card { background: var(--bg-color); padding: 2.5rem; border-radius: var(--border-radius-lg); position: relative; transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.03); }
-.step-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(12, 166, 150, 0.1); background: #fff; }
-.step-num { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 3rem; font-weight: 700; color: rgba(12, 166, 150, 0.1); font-family: 'Outfit', sans-serif; transition: color 0.4s ease; }
-.step-card:hover .step-num { color: rgba(12, 166, 150, 0.2); }
-.step-icon { width: 60px; height: 60px; background: rgba(12, 166, 150, 0.1); color: var(--primary-color); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: all 0.4s ease; }
+.steps-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; 
+  margin-top: 4rem; 
+  width: 100%;
+}
+.step-card { 
+  background: var(--bg-color); 
+  padding: 3.5rem 2rem; 
+  border-radius: var(--border-radius-lg); 
+  position: relative; 
+  transition: all 0.4s ease; 
+  border: 1px solid rgba(0,0,0,0.03); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  min-height: 300px;
+}
+.step-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(12, 166, 150, 0.12); background: #fff; border-color: var(--primary-color); }
+.step-num { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; font-weight: 800; color: rgba(12, 166, 150, 0.06); font-family: 'Outfit', sans-serif; transition: color 0.4s ease; z-index: 1; }
+.step-card:hover .step-num { color: rgba(12, 166, 150, 0.12); }
+.step-icon { 
+  width: 60px; 
+  height: 60px; 
+  background: rgba(12, 166, 150, 0.08); 
+  color: var(--primary-color); 
+  border-radius: 16px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 1.5rem; 
+  transition: all 0.4s ease; 
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
 .step-card:hover .step-icon { background: var(--primary-color); color: #fff; transform: scale(1.1); }
-.step-card h4 { font-size: 1.25rem; color: var(--text-dark); margin-bottom: 1rem; }
+.step-icon svg { 
+  width: 28px; 
+  height: 28px; 
+  display: block;
+}
+.step-card h4 { font-size: 1.2rem; color: var(--text-dark); margin-bottom: 1rem; line-height: 1.2; font-weight: 700; position: relative; z-index: 2; }
+.step-card p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin: 0; position: relative; z-index: 2; max-width: 100%; }
+
+@media (max-width: 900px) {
+  .steps-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .step-card { padding: 3rem 1.5rem; min-height: auto; }
+}
 
 /* Diagnostics Grid */
 .diag-grid {
@@ -1091,4 +1136,418 @@ details.diag-item[open] summary {
 .map-container iframe { width: 100%; height: 100%; border: 0; }
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Tabs System */
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 1rem;
+}
+.tab-link {
+  padding: 1rem 2rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid transparent;
+}
+.tab-link:hover {
+  background: rgba(12,166,150,0.05);
+  color: var(--primary-color);
+}
+.tab-link.active {
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(12, 166, 150, 0.2);
+}
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+.tab-pane.active {
+  display: block;
+}
+
+/* Professional Profile Styles */
+.profile-section {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+  margin-bottom: 4rem;
+}
+.profile-header {
+  background: linear-gradient(135deg, rgba(12,166,150,0.05) 0%, rgba(255,255,255,1) 100%);
+  padding: 4rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+.profile-header h2 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+.profile-header .title-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.profile-body {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+  padding: 4rem 3rem;
+}
+.profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.profile-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1/1.2;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.profile-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-main h3 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+}
+.profile-main p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+.specialty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.specialty-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem;
+  background: #FAFAFA;
+  border-radius: 10px;
+  font-weight: 500;
+  color: var(--primary-color);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.academic-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.academic-list {
+  list-style: none;
+  padding: 0;
+}
+.academic-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.academic-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+/* Evaluation Specific Styles */
+.feature-card {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+  height: 100%;
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(12,166,150,0.1);
+  border-color: var(--primary-color);
+}
+.feature-icon-circle {
+  width: 80px;
+  height: 80px;
+  background: rgba(12,166,150,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  color: var(--primary-color);
+}
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.symptom-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.symptom-card:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+.symptom-card svg {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+.symptom-card:hover svg {
+  color: #fff;
+}
+.benefit-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.benefit-item {
+  display: flex;
+  gap: 15px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+.benefit-icon {
+  flex-shrink: 0;
+  color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+  .profile-body {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem;
+  }
+  .profile-sidebar {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .specialty-grid {
+    grid-template-columns: 1fr;
+  }
+  .benefit-list {
+    grid-template-columns: 1fr;
+  }
+  .profile-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Sidebar Info (Psychologist Profile) */
+.sidebar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  text-align: left;
+}
+.info-item svg {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+/* Horizontal Step Grid (Avaliação) */
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+.step-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(12, 166, 150, 0.12);
+  border-color: var(--primary-color);
+}
+.step-number {
+  width: 55px;
+  height: 55px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 8px 15px rgba(12, 166, 150, 0.2);
+}
+.step-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: 'Outfit', sans-serif;
+}
+.step-card p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .step-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Instrumentos de Avaliação Grid */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.tool-card {
+  background: var(--surface-color);
+  padding: 3rem;
+  border-radius: 24px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-card:hover {
+  background: #fff;
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(12, 166, 150, 0.1);
+  border-color: var(--primary-color);
+}
+
+.tool-card h4 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 1.5rem 0 1rem 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.tool-card p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Toggle Logic */
+.tool-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.tool-toggle-btn:hover {
+  letter-spacing: 0.5px;
+}
+
+.expanded-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.expanded-content.active {
+  max-height: 300px;
+  margin-top: 1.5rem;
+  opacity: 1;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(12, 166, 150, 0.2);
+}
+
+.tool-card .badge-number {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(12, 166, 150, 0.05);
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
 }

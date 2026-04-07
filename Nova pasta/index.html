@@ -55,248 +55,503 @@
         </div>
     </header>
 
-    <!-- Hero Slider Section -->
-    <section id="hero-slider" class="hero-slider-section">
-        <div class="slider-container">
-            <div class="slide active"
-                style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/img/hero/hero-1.png');">
-                <div class="slide-content container">
-                    <h1>Avaliação Neuropsicológica e Tratamento Psicológico</h1>
-                    <p>Somos uma referência no procedimento de avaliação neuropsicológica. Possuímos todos os principais
-                        instrumentos para investigação das funções cognitivas do cérebro garantindo um laudo assertivo
-                        para um fechamento diagnóstico eficaz e melhor promoção da reabilitação neuropsicológica.</p>
-                    <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary">Solicite uma
-                        Avaliação</a>
-                </div>
-            </div>
-            <div class="slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/img/hero/hero-2.png');">
-                <div class="slide-content container">
-                    <h1>Atendimento Humanizado e Ético</h1>
-                    <p>Compreensão profunda do seu histórico, queixas e rotina para promover estratégias de tratamento
-                        direcionadas ao seu bem-estar profundo.</p>
-                    <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary">Agende uma
-                        Consulta</a>
-                </div>
-            </div>
-            <div class="slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/img/hero/hero-3.png');">
-                <div class="slide-content container">
-                    <h1>Diagnóstico Assertivo e Especializado</h1>
-                    <p>Utilização de testes padrão-ouro e escalas específicas para o mapeamento preciso de diagnósticos
-                        como TEA, TDAH e declínios cognitivos.</p>
-                    <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary">Saiba Mais</a>
-                </div>
-            </div>
-            <div class="slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/img/hero/hero-4.png');">
-                <div class="slide-content container">
-                    <h1>Neuropsy Saúde: Excelência Clínica</h1>
-                    <p>Clínica especializada no diagnóstico e avaliação cognitiva de crianças, adolescentes, adultos e
-                        idosos no coração de Niterói.</p>
-                    <a href="https://wa.me/5521980345623" target="_blank" class="btn btn-primary">Conheça Nosso
-                        Espaço</a>
-                </div>
-            </div>
+    <!-- Hero Section - Dois Cérebros Interativos (TEMA CLARO) -->
+    <section id="hero-cinema" style="
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #f4f7fb 60%, #e2e8f0 100%);
+    ">
+        <!-- Bokeh Background Spots -->
+        <div
+            style="position:absolute; top:10%; left:15%; width:300px; height:300px; background:rgba(12,166,150,0.08); filter:blur(100px); border-radius:50%; pointer-events:none; z-index:1;">
         </div>
-        <button class="slider-nav prev" onclick="moveSlide(-1)">&lsaquo;</button>
-        <button class="slider-nav next" onclick="moveSlide(1)">&rsaquo;</button>
-        <div class="slider-dots">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div
+            style="position:absolute; bottom:15%; right:10%; width:400px; height:400px; background:rgba(98,47,119,0.06); filter:blur(120px); border-radius:50%; pointer-events:none; z-index:1;">
+        </div>
+        <div
+            style="position:absolute; top:40%; left:50%; transform:translateX(-50%); width:500px; height:300px; background:rgba(249,218,95,0.04); filter:blur(130px); border-radius:50%; pointer-events:none; z-index:1;">
+        </div>
+        <!-- Canvas para efeito de neurônios (Filtro para Darken Theme) -->
+        <canvas id="neuronCanvas"
+            style="position:absolute;inset:0;z-index:2;pointer-events:none;width:100%;height:100%; filter: invert(1) hue-rotate(180deg); opacity: 0.7;"></canvas>
+
+        <!-- Fundo: grade sutil de pontos escuros -->
+        <div style="position:absolute;inset:0;z-index:1;
+            background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events:none;"></div>
+
+        <!-- CÉREBRO ESQUERDO -->
+        <div id="brainLeft" class="brain-side" style="
+            position: absolute;
+            left: -12%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55%;
+            max-width: 750px;
+            opacity: 0.85;
+            z-index: 3;
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        ">
+            <div class="brain-glow" style="
+                position:absolute; inset:-5%;
+                background: radial-gradient(ellipse at center, rgba(255,80,150,0.25) 0%, rgba(138,60,200,0.1) 45%, transparent 70%);
+                filter: blur(35px); z-index:0;
+                animation: brainPulse 4s ease-in-out infinite;
+            "></div>
+            <img src="assets/img/brain-hq.png" alt="Cérebro Neural Esquerdo" class="brain-img" style="
+                    width: 100%; display: block; position: relative; z-index:1;
+                    mask-image: radial-gradient(ellipse 75% 65% at left center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    -webkit-mask-image: radial-gradient(ellipse 75% 65% at left center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    filter: drop-shadow(0 0 40px rgba(255,50,130,0.3)) brightness(1.2) saturate(1.6) hue-rotate(-5deg);
+                    transition: all 0.6s ease;
+                    transform-origin: right center;
+                ">
+        </div>
+
+        <!-- CÉREBRO DIREITO -->
+        <div id="brainRight" class="brain-side" style="
+            position: absolute;
+            right: -12%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55%;
+            max-width: 750px;
+            opacity: 0.85;
+            z-index: 3;
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        ">
+            <div class="brain-glow" style="
+                position:absolute; inset:-5%;
+                background: radial-gradient(ellipse at center, rgba(12,220,220,0.25) 0%, rgba(60,100,200,0.1) 45%, transparent 70%);
+                filter: blur(35px); z-index:0;
+                animation: brainPulse 4s ease-in-out infinite 2s;
+            "></div>
+            <img src="assets/img/brain-hq.png" alt="Cérebro Neural Direito" class="brain-img" style="
+                    width: 100%; display: block; position: relative; z-index:1;
+                    mask-image: radial-gradient(ellipse 75% 65% at right center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    -webkit-mask-image: radial-gradient(ellipse 75% 65% at right center, black 20%, rgba(0,0,0,0.8) 50%, transparent 90%);
+                    filter: drop-shadow(0 0 40px rgba(0,220,240,0.3)) brightness(1.2) saturate(1.6) hue-rotate(5deg);
+                    transition: all 0.6s ease;
+                    transform-origin: left center;
+                ">
+        </div>
+
+        <!-- Overlay central para legibilidade do texto -->
+        <div style="
+            position:absolute; inset:0; z-index:4; pointer-events:none;
+            background: radial-gradient(ellipse at 50% 50%,
+                rgba(255,255,255,0.95) 0%,
+                rgba(255,255,255,0.8) 35%,
+                rgba(255,255,255,0.3) 65%,
+                transparent 85%
+            );
+        "></div>
+
+        <!-- CONTEÚDO CENTRAL -->
+        <div class="container"
+            style="position:relative; z-index:10; text-align:center; padding-top:2rem; padding-bottom:1rem; max-width:700px;">
+
+            <!-- Pill -->
+            <div class="reveal" style="
+                display:inline-flex; align-items:center; gap:10px;
+                background:rgba(255,255,255,0.6); border:1px solid rgba(12,166,150,0.15);
+                backdrop-filter:blur(10px); padding:8px 22px; border-radius:50px; margin-bottom:1.5rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            ">
+                <div
+                    style="width:6px;height:6px;border-radius:50%;background:#0ca696;box-shadow:0 0 10px rgba(12,166,150,0.5);animation:blinkCin 2.5s infinite;">
+                </div>
+                <span
+                    style="color:#2d1557;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-family:'Outfit',sans-serif;">Especialista
+                    em Neuropsicologia</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="reveal" style="
+                font-family:'Outfit',sans-serif;
+                font-size:clamp(3.5rem,8vw,6rem);
+                font-weight:900;
+                line-height:0.9;
+                margin-bottom:1.5rem;
+                letter-spacing:-2px;
+            ">
+                <span style="
+                    display:block;
+                    background:linear-gradient(135deg,#3B1D5F 0%,#6A3C8B 100%);
+                    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+                ">Neuropsy</span>
+                <span style="
+                    display:block;
+                    background:linear-gradient(135deg,#0CA696 0%,#55C5B5 100%);
+                    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+                ">Saúde</span>
+            </h1>
+
+            <!-- Descrição -->
+            <p class="reveal" style="
+                color:rgba(0,0,0,0.65);font-size:1.05rem;line-height:1.5;
+                margin:0 auto 1.2rem auto;font-weight:400;max-width:480px;
+            ">
+                Clínica especializada no diagnóstico e avaliação cognitiva de crianças, adolescentes, adultos e idosos
+                no coração de Niterói.
+            </p>
+
+            <!-- CTAs -->
+            <div class="reveal"
+                style="display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+                <a href="https://wa.me/5521980345623" target="_blank" style="
+                    display:inline-flex;align-items:center;gap:10px;
+                    background:#0ca696;color:#fff;
+                    padding:0.8rem 1.8rem;border-radius:50px;
+                    font-weight:700;font-family:'Outfit',sans-serif;font-size:0.95rem;
+                    box-shadow:0 10px 30px rgba(12,166,150,0.25);
+                    transition:all 0.3s ease;text-decoration:none;
+                " onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 15px 40px rgba(12,166,150,0.35)'"
+                    onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 10px 30px rgba(12,166,150,0.25)'">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.01 2.01C6.48 2.01 2 6.49 2 12.02c0 1.76.46 3.44 1.34 4.93L2 22l5.22-1.31c1.45.8 3.09 1.25 4.79 1.25 5.53 0 10.01-4.48 10.01-10.01s-4.48-10-10-10.01h-.01zm0 18.3c-1.5 0-2.96-.38-4.26-1.12l-.31-.18-3.17.8.84-3.09-.2-.31A8.2 8.2 0 0 1 3.68 12c0-4.6 3.74-8.34 8.33-8.34 4.59 0 8.33 3.74 8.33 8.34 0 4.6-3.74 8.34-8.33 8.34z" />
+                    </svg>
+                    Agendar via WhatsApp
+                </a>
+                <a href="#ofereca" style="
+                    display:inline-flex;align-items:center;gap:8px;
+                    background:transparent;color:#1e0535;
+                    border:1px solid rgba(0,0,0,0.15);
+                    padding:0.8rem 1.8rem;border-radius:50px;
+                    font-weight:600;font-family:'Outfit',sans-serif;font-size:0.95rem;
+                    transition:all 0.3s ease;text-decoration:none;
+                " onmouseover="this.style.background='rgba(0,0,0,0.03)';this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'">
+                    Saiba mais
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 8h10M10 3l5 5-5 5" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="reveal"
+                style="display:flex;gap:3rem;border-top:1px solid rgba(0,0,0,0.06);padding-top:2rem;flex-wrap:nowrap;justify-content:center;margin-top:1rem;">
+                <div style="text-align:center;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:800;color:#1e0535;line-height:1;">
+                        2000+</div>
+                    <div
+                        style="color:rgba(0,0,0,0.45);font-size:0.75rem;margin-top:6px;letter-spacing:0.5px;font-weight:600;text-transform:uppercase;">
+                        Avaliações reais</div>
+                </div>
+                <div style="width:1px; background:rgba(0,0,0,0.06); height:40px; align-self:center;"></div>
+                <div style="text-align:center;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800;color:#1e0535;line-height:1.2;margin-top:4px;">
+                        CRP 05/54915</div>
+                    <div
+                        style="color:rgba(0,0,0,0.45);font-size:0.75rem;margin-top:6px;letter-spacing:0.5px;font-weight:600;text-transform:uppercase;">
+                        Registro ativo</div>
+                </div>
+                <div style="width:1px; background:rgba(0,0,0,0.06); height:40px; align-self:center;"></div>
+                <div style="text-align:center;">
+                    <div
+                        style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:800;color:#1e0535;line-height:1;">
+                        Niterói</div>
+                    <div
+                        style="color:rgba(0,0,0,0.45);font-size:0.75rem;margin-top:6px;letter-spacing:0.5px;font-weight:600;text-transform:uppercase;">
+                        Centro · RJ</div>
+                </div>
+            </div>
         </div>
 
         <style>
-            .hero-slider-section {
-                position: relative;
-                height: 100vh;
-                min-height: 600px;
-                overflow: hidden;
-                background-color: var(--text-dark);
+            @keyframes brainPulse {
+
+                0%,
+                100% {
+                    opacity: 0.6;
+                    transform: scale(1);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1.02);
+                }
             }
 
-            .slider-container {
-                width: 100%;
-                height: 100%;
-                position: relative;
+            @keyframes blinkCin {
+
+                0%,
+                100% {
+                    opacity: 1;
+                    box-shadow: 0 0 8px rgba(12, 166, 150, 0.5);
+                }
+
+                50% {
+                    opacity: 0.3;
+                    box-shadow: 0 0 2px rgba(12, 166, 150, 0.1);
+                }
             }
 
-            .slide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                background-position: center;
-                opacity: 0;
-                transition: opacity 0.8s ease-in-out;
-                display: flex;
-                align-items: center;
-                z-index: 1;
+            /* Hover: cérebros com filtro dinâmico */
+            #hero-cinema:hover #brainLeft .brain-img {
+                filter: drop-shadow(0 0 35px rgba(255, 100, 180, 0.4)) brightness(1.1) saturate(1.7) hue-rotate(-15deg);
+                transform: scale(1.04) translateX(8px);
             }
 
-            .slide.active {
+            #hero-cinema:hover #brainRight .brain-img {
+                filter: drop-shadow(0 0 35px rgba(0, 220, 220, 0.4)) brightness(1.1) saturate(1.7) hue-rotate(15deg);
+                transform: scale(1.04) translateX(-8px);
+            }
+
+            #hero-cinema:hover .brain-glow {
                 opacity: 1;
-                z-index: 2;
+                animation-play-state: running;
             }
 
-            .slide-content {
-                color: #fff;
-                max-width: 900px;
-                padding: 0 2rem;
-                transform: translateY(20px);
-                opacity: 0;
-                transition: all 0.8s ease 0.3s;
-            }
-
-            .slide.active .slide-content {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .slide-content h1 {
-                font-family: 'Outfit', sans-serif;
-                font-size: clamp(2.2rem, 5vw, 4rem);
-                font-weight: 800;
-                margin-bottom: 1.5rem;
-                color: #fff;
-                line-height: 1.1;
-                letter-spacing: -1px;
-            }
-
-            .slide-content p {
-                font-size: 1.15rem;
-                margin-bottom: 2rem;
-                line-height: 1.7;
-                opacity: 0.95;
-                max-width: 800px;
-            }
-
-            .slider-nav {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background: rgba(255, 255, 255, 0.15);
-                color: #fff;
-                border: none;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                font-size: 2rem;
-                cursor: pointer;
-                z-index: 10;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                backdrop-filter: blur(4px);
-            }
-
-            .slider-nav:hover {
-                background: var(--primary-color);
-            }
-
-            .slider-nav.prev {
-                left: 20px;
-            }
-
-            .slider-nav.next {
-                right: 20px;
-            }
-
-            .slider-dots {
-                position: absolute;
-                bottom: 30px;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                gap: 10px;
-                z-index: 10;
-            }
-
-            .dot {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.4);
-                cursor: pointer;
-                transition: var(--transition);
-            }
-
-            .dot.active {
-                background: var(--primary-color);
-                transform: scale(1.3);
-            }
-
-            @media(max-width: 768px) {
-                .slide-content {
-                    padding: 0 1rem;
-                    text-align: center;
+            @media(max-width:900px) {
+                #brainLeft {
+                    left: -20%;
+                    width: 55%;
+                    opacity: 0.35;
                 }
 
-                .slide-content h1 {
-                    font-size: 2.2rem;
+                #brainRight {
+                    right: -20%;
+                    width: 55%;
+                    opacity: 0.35;
                 }
+            }
 
-                .slide-content p {
-                    font-size: 1rem;
-                }
+            @media(max-width:600px) {
 
-                .slider-nav {
+                #brainLeft,
+                #brainRight {
                     display: none;
-                    /* Hide arrows on mobile to prefer swipe/dots */
                 }
 
-                .slide {
-                    align-items: center;
+                #hero-cinema h1 {
+                    font-size: clamp(2.5rem, 12vw, 3.5rem) !important;
+                    line-height: 1.1 !important;
+                }
+
+                #hero-cinema .container {
+                    padding: 4rem 1.5rem !important;
+                    display: flex;
+                    flex-direction: column;
                     justify-content: center;
+                    min-height: 100vh;
+                }
+
+                /* Estatísticas vertical no mobile para não amontoar */
+                #hero-cinema .container>div:last-child {
+                    flex-direction: column !important;
+                    gap: 1.5rem !important;
+                    align-items: center;
+                }
+
+                #hero-cinema .container>div:last-child div {
+                    text-align: center !important;
+                }
+
+                #hero-cinema .container>div:last-child div[style*="background"] {
+                    display: none !important;
                 }
             }
         </style>
+
         <script>
-            let slideIndex = 0;
-            let slideInterval;
+            (function () {
+                // ── Canvas de neurônios ───────────────────────────────────────────
+                var canvas = document.getElementById('neuronCanvas');
+                var ctx = canvas.getContext('2d');
+                var W, H, particles = [], lines = [], mouse = { x: -9999, y: -9999, active: false };
+                var PARTICLE_COUNT = 80;
+                var MAX_DIST = 180;
+                var colors = ['rgba(255,100,180,', 'rgba(180,100,255,', 'rgba(0,220,220,', 'rgba(255,220,80,'];
 
-            function showSlides(n) {
-                const slides = document.querySelectorAll('.slide');
-                const dots = document.querySelectorAll('.dot');
-                if (!slides.length) return;
+                function resize() {
+                    W = canvas.width = canvas.offsetWidth;
+                    H = canvas.height = canvas.offsetHeight;
+                }
 
-                if (n >= slides.length) slideIndex = 0;
-                if (n < 0) slideIndex = slides.length - 1;
+                function Particle() {
+                    this.x = Math.random() * W;
+                    this.y = Math.random() * H;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.r = Math.random() * 2.5 + 1;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.pulse = Math.random() * Math.PI * 2;
+                    this.pulseSpeed = Math.random() * 0.03 + 0.01;
+                    this.fired = false;
+                    this.fireTimer = 0;
+                }
 
-                slides.forEach(s => s.classList.remove('active'));
-                dots.forEach(d => d.classList.remove('active'));
+                Particle.prototype.update = function () {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.pulse += this.pulseSpeed;
+                    if (this.x < 0 || this.x > W) this.vx *= -1;
+                    if (this.y < 0 || this.y > H) this.vy *= -1;
+                    // Reagir ao mouse
+                    if (mouse.active) {
+                        var dx = this.x - mouse.x, dy = this.y - mouse.y;
+                        var d = Math.sqrt(dx * dx + dy * dy);
+                        if (d < 120) {
+                            var force = 0.6 * (1 - d / 120);
+                            this.vx += dx / d * force;
+                            this.vy += dy / d * force;
+                            var spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+                            if (spd > 3) { this.vx = this.vx / spd * 3; this.vy = this.vy / spd * 3; }
+                        }
+                    }
+                };
 
-                slides[slideIndex].classList.add('active');
-                dots[slideIndex].classList.add('active');
-            }
+                Particle.prototype.draw = function () {
+                    var alpha = 0.5 + 0.5 * Math.sin(this.pulse);
+                    var glow = this.r * (2 + 2 * Math.sin(this.pulse));
+                    // Brilho externo
+                    var grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, glow * 3);
+                    grad.addColorStop(0, this.color + '' + alpha + ')');
+                    grad.addColorStop(1, this.color + '0)');
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, glow * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                    // Núcleo
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color + '' + (alpha) + ')';
+                    ctx.fill();
+                };
 
-            function moveSlide(n) {
-                clearInterval(slideInterval);
-                showSlides(slideIndex += n);
-                startSlideTimer();
-            }
+                function initParticles() {
+                    particles = [];
+                    for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+                }
 
-            function currentSlide(n) {
-                clearInterval(slideInterval);
-                showSlides(slideIndex = n);
-                startSlideTimer();
-            }
+                function drawConnections() {
+                    for (var i = 0; i < particles.length; i++) {
+                        for (var j = i + 1; j < particles.length; j++) {
+                            var dx = particles[i].x - particles[j].x;
+                            var dy = particles[i].y - particles[j].y;
+                            var d = Math.sqrt(dx * dx + dy * dy);
+                            var mDist = MAX_DIST, alpha = 0;
+                            if (mouse.active) {
+                                var mx = (particles[i].x + particles[j].x) / 2 - mouse.x;
+                                var my = (particles[i].y + particles[j].y) / 2 - mouse.y;
+                                var md = Math.sqrt(mx * mx + my * my);
+                                if (md < 250) mDist = MAX_DIST + 100;
+                            }
+                            if (d < mDist) {
+                                alpha = (1 - d / mDist) * 0.5;
+                                if (mouse.active) {
+                                    var mx2 = (particles[i].x + particles[j].x) / 2 - mouse.x;
+                                    var my2 = (particles[i].y + particles[j].y) / 2 - mouse.y;
+                                    var md2 = Math.sqrt(mx2 * mx2 + my2 * my2);
+                                    if (md2 < 250) alpha *= (1.5 + 1 * (1 - md2 / 250));
+                                }
+                                var cx = (particles[i].x + particles[j].x) / 2 / W;
+                                var r = Math.round(180 + cx * 75);
+                                var g = Math.round(80 + (1 - cx) * 120);
+                                var b = Math.round(255 - cx * 120);
+                                ctx.beginPath();
+                                ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+                                ctx.lineWidth = mouse.active ? 1.2 : 0.7;
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
 
-            function startSlideTimer() {
-                slideInterval = setInterval(() => {
-                    showSlides(slideIndex += 1);
-                }, 6000);
-            }
+                var signals = [];
+                function fireSignal() {
+                    if (!mouse.active) return;
+                    var close = [], best = Infinity, src = null;
+                    particles.forEach(function (p) {
+                        var d = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+                        if (d < best) { best = d; src = p; }
+                    });
+                    if (!src) return;
+                    var neighbors = particles.filter(function (p) {
+                        return p !== src && Math.hypot(p.x - src.x, p.y - src.y) < MAX_DIST + 80;
+                    });
+                    if (neighbors.length === 0) return;
+                    var target = neighbors[Math.floor(Math.random() * neighbors.length)];
+                    signals.push({
+                        x: src.x, y: src.y,
+                        tx: target.x, ty: target.y,
+                        progress: 0, speed: 0.035,
+                        color: src.color
+                    });
+                }
 
-            document.addEventListener('DOMContentLoaded', () => {
-                showSlides(slideIndex);
-                startSlideTimer();
-            });
+                function updateSignals() {
+                    signals = signals.filter(function (s) {
+                        s.progress += s.speed;
+                        s.x = s.x + (s.tx - s.x) * s.speed * 8;
+                        s.y = s.y + (s.ty - s.y) * s.speed * 8;
+                        var alpha = 1 - s.progress;
+                        if (alpha <= 0) return false;
+                        var grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, 12);
+                        grad.addColorStop(0, s.color + alpha + ')');
+                        grad.addColorStop(1, s.color + '0)');
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, 10, 0, Math.PI * 2);
+                        ctx.fillStyle = grad;
+                        ctx.fill();
+                        return s.progress < 1;
+                    });
+                }
+
+                var frameCount = 0;
+                function animate() {
+                    requestAnimationFrame(animate);
+                    ctx.clearRect(0, 0, W, H);
+                    drawConnections();
+                    particles.forEach(function (p) { p.update(); p.draw(); });
+                    updateSignals();
+                    frameCount++;
+                    if (mouse.active && frameCount % 8 === 0) fireSignal();
+                }
+
+                var section = document.getElementById('hero-cinema');
+                if (section) {
+                    section.addEventListener('mousemove', function (e) {
+                        var r = section.getBoundingClientRect();
+                        mouse.x = e.clientX - r.left;
+                        mouse.y = e.clientY - r.top;
+                        mouse.active = true;
+                        var bl = document.getElementById('brainLeft');
+                        var br = document.getElementById('brainRight');
+                        var xN = (mouse.x / W - 0.5) * 2;
+                        var yN = (mouse.y / H - 0.5) * 2;
+                        if (bl) bl.style.transform = 'translateY(calc(-50% + ' + (yN * 10) + 'px)) translateX(' + (xN * 8) + 'px)';
+                        if (br) br.style.transform = 'translateY(calc(-50% + ' + (yN * 10) + 'px)) translateX(' + (xN * -8) + 'px)';
+                    });
+                    section.addEventListener('mouseleave', function () {
+                        mouse.active = false;
+                        mouse.x = -9999; mouse.y = -9999;
+                        var bl = document.getElementById('brainLeft');
+                        var br = document.getElementById('brainRight');
+                        if (bl) bl.style.transform = 'translateY(-50%)';
+                        if (br) br.style.transform = 'translateY(-50%)';
+                    });
+                }
+
+                window.addEventListener('resize', function () { resize(); initParticles(); });
+                resize();
+                initParticles();
+                animate();
+            })();
         </script>
     </section>
 
@@ -341,127 +596,103 @@
                     style="padding: 1rem 2rem; font-size: 1.05rem;">Quero agendar minha avaliação</a>
             </div>
 
-            <!-- Imagem Gerada ao Lado em Formato Orgânico -->
-            <div
-                style="position: relative; display: flex; justify-content: center; align-items: center; padding: 2rem;">
-                <!-- Decorative background blob 1 -->
-                <div style="
-                    position: absolute;
-                    width: 90%; height: 90%;
-                    background: linear-gradient(135deg, rgba(12, 166, 150, 0.15), rgba(85, 197, 181, 0.05));
-                    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-                    z-index: 0;
-                    transform: rotate(-15deg);
-                "></div>
-                <!-- Decorative background blob 2 -->
-                <div style="
-                    position: absolute;
-                    width: 70%; height: 70%;
-                    background: linear-gradient(135deg, rgba(12, 166, 150, 0.1), rgba(106, 60, 139, 0.05));
-                    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-                    z-index: 0;
-                    transform: rotate(20deg);
-                "></div>
-
-                <!-- Main image with blob mask -->
-                <div style="
-                    position: relative;
-                    z-index: 1;
-                    width: 100%;
-                    max-width: 480px;
-                    border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%;
-                    overflow: hidden;
-                    box-shadow: 0 25px 45px rgba(12, 166, 150, 0.15), inset 0 0 0 8px rgba(255,255,255,0.6);
-                    background: #fff;
-                    aspect-ratio: 1 / 1.05;
-                ">
-                    <img src="assets/img/online-tests-new.png" alt="Testes Neuropsicológicos"
-                        style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.05); transition: transform 0.6s ease;"
-                        onmouseover="this.style.transform='scale(1.12)'"
-                        onmouseout="this.style.transform='scale(1.05)'">
-                </div>
+            <!-- Imagem Gerada ao Lado -->
+            <div style="position: relative;">
+                <img src="assets/img/online-tests-new.png" alt="Testes Neuropsicológicos"
+                    style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
             </div>
         </div>
     </section>
 
-    <!-- Passos Interativos (Atualizado) -->
+    <!-- Passos Interativos (MOVIDO E EXPANDIDO) -->
     <section class="reveal"
         style="background-color: var(--bg-color); border-bottom: 1px solid rgba(0,0,0,0.03); padding: 5rem 0;">
-        <div class="container" style="max-width: 1350px;">
-            <h2 class="section-title">COMO FUNCIONA?</h2>
-            <p
-                style="text-align: center; color: var(--text-light); max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
-                A avaliação é um processo estruturado, humano e altamente investigativo. O nosso método de excelência
-                utiliza múltiplos instrumentos para entender o seu cérebro:</p>
-            <div class="steps-grid">
+        <div class="container">
+            <h2 class="section-title">Como funciona a avaliação</h2>
+            <div class="steps-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
 
                 <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                    <div class="step-num">1</div>
-                    <div class="step-icon">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="9" y1="3" x2="9" y2="21"></line>
-                        </svg>
-                    </div>
-                    <h4>Testes psicológicos e neuropsicológicos padronizados</h4>
-                    <p>Testes psicológicos e neuropsicológicos avançados e interativos para leitura real da cognição
-                        (foco, memória, etc).</p>
-                </div>
-
-                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                    <div class="step-num">2</div>
-                    <div class="step-icon">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg>
-                    </div>
-                    <h4>Escalas de avaliação específicas</h4>
-                    <p>Medidas rigorosas focadas no rastreio clínico, mensuração exata de sintomas e mapeamento de
-                        diagnósticos precoces.</p>
-                </div>
-
-                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                    <div class="step-num">3</div>
-                    <div class="step-icon">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h4>Inventários comportamentais e emocionais</h4>
-                    <p>Inventários comportamentais e emocionais para decodificar níveis de ansiedade, regulação do humor
-                        e reatividade.</p>
-                </div>
-
-                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                    <div class="step-num">4</div>
-                    <div class="step-icon">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="8" y1="6" x2="21" y2="6"></line>
-                            <line x1="8" y1="12" x2="21" y2="12"></line>
-                            <line x1="8" y1="18" x2="21" y2="18"></line>
-                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                        </svg>
-                    </div>
-                    <h4>Questionários estruturados</h4>
-                    <p>Coleta de dados adicionais e direcionados para não deixar passar nenhum detalhe fundamental na
-                        elaboração do laudo.</p>
-                </div>
-
-                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                    <div class="step-num">5</div>
+                    <div class="step-num">01</div>
                     <div class="step-icon">
                         <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </div>
-                    <h4>Entrevistas clínicas detalhadas</h4>
-                    <p>Compreensão profunda do seu histórico, queixas sistêmicas, rotina e impactos observados no dia a
-                        dia.</p>
+                    <h4>Entrevistas Clínicas Humanizadas</h4>
+                    <p>Encontros iniciais cruciais para acolher, debater e entender detalhadamente seu histórico e suas
+                        principais queixas.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">02</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4>Entrevistas com a Família</h4>
+                    <p>Diálogos necessários para a coleta de dados adicionais e para construir uma avaliação sistêmica
+                        baseada no seu contexto completo.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">03</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Escalas Comportamentais</h4>
+                    <p>Aplicação de protocolos científicos e padronizados para o mapeamento específico de traços de
+                        personalidade, variações de humor e ansiedade.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">04</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Testes de Inteligência</h4>
+                    <p>Sessão de avaliações englobando habilidades e raciocínio lógico utilizando metodologias precisas
+                        para averiguação direta de QI intelectual.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">05</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h4>Aplicação de Testes Online</h4>
+                    <p>Aproveitamos a tecnologia de forma assertiva com plataformas dinâmicas e interativas otimizando o
+                        conforto do paciente.</p>
+                </div>
+
+                <div class="step-card" style="box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
+                    <div class="step-num">06</div>
+                    <div class="step-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h4>Entrega do Laudo</h4>
+                    <p>Entrevista de devolução transparente com entrega de laudos estruturados, perfil neuropsicológico
+                        alcançado e todos os encaminhamentos cirúrgicos.</p>
                 </div>
 
             </div>
@@ -491,275 +722,10 @@
                 grid-template-columns: 1fr !important;
                 padding: 0 1rem;
             }
-
-            .container[style*="grid-template-columns: 1fr 1fr"] img {
-                margin-top: 2rem;
-            }
         }
     </style>
-
-    <!-- A Quem Se Destina -->
-    <section class="reveal" style="padding: 5rem 0; background-color: #fff;">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">A quem se destina</h2>
-            <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
-                Oferecemos suporte especializado para todas as fases da vida, adaptando nossa linguagem e ferramentas
-                para cada paciente.
-            </p>
-            <div class="destina-grid">
-                <div class="destina-card">
-                    <div class="destina-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg></div>
-                    <h4>Crianças</h4>
-                    <p>Avaliação do desenvolvimento, dificuldades escolares, TDAH e autismo através de métodos lúdicos.
-                    </p>
-                </div>
-                <div class="destina-card">
-                    <div class="destina-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg></div>
-                    <h4>Adolescentes</h4>
-                    <p>Suporte em questões de sociabilidade, foco, organização e transição para a vida adulta.</p>
-                </div>
-                <div class="destina-card">
-                    <div class="destina-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                            <polyline points="16 11 18 13 22 9"></polyline>
-                        </svg></div>
-                    <h4>Adultos</h4>
-                    <p>Investigação de queixas de memória, atenção no trabalho, ansiedade e perfis cognitivos.</p>
-                </div>
-                <div class="destina-card">
-                    <div class="destina-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg></div>
-                    <h4>Idosos</h4>
-                    <p>Rastreio de declínio cognitivo, demências e preservação da autonomia com envelhecimento saudável.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Por que escolher -->
-    <section class="reveal" style="padding: 5rem 0; background-color: var(--bg-color);">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">Por que escolher a Neuropsy Saúde?</h2>
-            <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
-                Excelência técnica aliada a um olhar humano e individualizado.
-            </p>
-            <div class="escolher-grid">
-                <div class="escolher-card">
-                    <div class="escolher-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg></div>
-                    <h4>Equipe Especialista</h4>
-                    <p>Profissionais com formação avançada e foco exclusivo em neuropsicologia clínica.</p>
-                </div>
-                <div class="escolher-card">
-                    <div class="escolher-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="16" x2="12" y2="12"></line>
-                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                        </svg></div>
-                    <h4>Tecnologia e Ciência</h4>
-                    <p>Uso de softwares interativos e as baterias de testes mais modernas do mercado.</p>
-                </div>
-                <div class="escolher-card">
-                    <div class="escolher-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg></div>
-                    <h4>Olhar Humanizado</h4>
-                    <p>Cada laudo é uma história. Nossa prioridade é o acolhimento do paciente e da família.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nossos Serviços -->
-    <section class="reveal" style="padding: 5rem 0; background-color: #fff;">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">Nossos Serviços</h2>
-            <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem;">
-                Excelência clínica focada no seu bem-estar e clareza diagnóstica.
-            </p>
-            <div class="servicos-grid">
-                <div class="servico-card">
-                    <img src="assets/img/av-proc-1.png" alt="Avaliação Neuropsicológica" class="servico-img">
-                    <div class="servico-content" style="text-align: left;">
-                        <h4>Avaliação Neuropsicológica</h4>
-                        <p>Investigação detalhada das funções cognitivas, emocionais e comportamentais para diagnóstico
-                            de TEA, TDAH, Demências e outros.</p>
-                        <a href="avaliacao.html"
-                            style="color: var(--primary-color); font-weight: 600; display: inline-flex; align-items: center; gap: 5px; margin-top: 1rem;">Saiba
-                            mais <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="servico-card">
-                    <img src="assets/img/espaco-clinica-1.png" alt="Consulta Psicológica" class="servico-img">
-                    <div class="servico-content" style="text-align: left;">
-                        <h4>Consulta Psicológica</h4>
-                        <p>Atendimento clínico focado no suporte emocional, manejo de ansiedade, depressão e
-                            autoconhecimento para todas as idades.</p>
-                        <a href="consulta.html"
-                            style="color: var(--primary-color); font-weight: 600; display: inline-flex; align-items: center; gap: 5px; margin-top: 1rem;">Saiba
-                            mais <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        .destina-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .destina-card {
-            background: #FAFAFA;
-            padding: 2.5rem 1.5rem;
-            border-radius: var(--border-radius-lg);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .destina-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            background: #fff;
-        }
-
-        .destina-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.5rem;
-            background: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .destina-card h4 {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .destina-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .escolher-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .escolher-card {
-            background: #fff;
-            padding: 3rem 2rem;
-            border-radius: var(--border-radius-lg);
-            text-align: left;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-            transition: var(--transition);
-        }
-
-        .escolher-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(12, 166, 150, 0.08);
-        }
-
-        .escolher-icon {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .escolher-card h4 {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .escolher-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .servico-card {
-            background: #FAFAFA;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-        }
-
-        .servico-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .servico-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .servico-content {
-            padding: 2rem;
-        }
-
-        .servico-content h4 {
-            font-size: 1.35rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .servico-content p {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
+    
     </style>
-
-
 
 
 
@@ -977,65 +943,11 @@
             <div class="space-scroll-container"
                 style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 1rem 0 2rem 0; scrollbar-width: thin; scrollbar-color: var(--primary-color) transparent; -webkit-overflow-scrolling: touch;">
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/663102078_2203539360417807_3022219334269988299_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=J5WYDSi8CEgQ7kNvwEyoIQ4&_nc_oc=Adr519_WhapfKBO7aUxOL8ARDeR56BzoAUQqmJvFyrE6wbAMWx-UWgav5wPP_TOoJqm1XGeS7uZ2Dtcx8JQECyYt&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AH2VTnOC465yQoMdUsAS49LX32pqQIIzdysOnlxywlZSQ&oe=69FC1C59"
-                        alt="Recepção"
+                    <img src="assets/img/espaco-1.png" alt="Recepção"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.3&permmsgid=msg-a:r1637013474469651734&th=19d66cbc131fc141&view=fimg&realattid=19d66cb9a76eda8331a1&disp=thd&attbid=ANGjdJ9nQwg4SzehVNDRlIGk7cHuZcewd5Cxzs7CD0hMkbfKNjV2DGa-vflTjzfiFOhzbxBZbJJSfcFsPneC5k5fgZbuq-qI6ajTUX5MwucrAxgcAa6De_gebjZI8c4&ats=2524608000000&sz=w1919-h869&auditContext=forDisplay"
-                        alt="Sala de Atendimento"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.2&permmsgid=msg-a:r-7718102656179926292&th=19d66ea570446b61&view=fimg&realattid=19d66ea3c5d2096fa371&disp=thd&attbid=ANGjdJ_s-GFkzbyEIrtCYjKxXTyJB_GJqUmrWkHB6fV9YghZf4_AYxXetaqt21-BBNmug8TrWRIlx-F0m0Mj7QkGR1Ju2T3gCaC2Y5eNPfSWPWRt-ezDjl7iZ94FCZU&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPZ-0psoTstVf-gBmMkHuOxL-gRebIFRcOMj4kvl40Lnsda1Zd_bFNOA0AFKgivVZcJsAZPMaPnvvgEx8OtF7KsM_ykgUtqbrXu8E0pytld2oJRsA=w1919-h869?auditContext=forDisplay"
-                        alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.1&permmsgid=msg-a:r-7718102656179926292&th=19d66ea570446b61&view=fimg&realattid=19d66ea3c5db37927792&disp=thd&attbid=ANGjdJ-mVXRd1yF2TRD0IQXYR9wmwGxGCKmQqIAjnrnB604F-NE3nRvF_83g44IJ31TtN68tdy4MZ2y9M83eTOb00_ljoNX_n1Ox4JDYIEkpCVyvdJE-wqaxf4MQzsU&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.1&permmsgid=msg-a:r-4411935225471769040&th=19d66ef8b7cfccb2&view=fimg&realattid=19d66ef55d85860ed571&disp=thd&attbid=ANGjdJ_xo5XiylmFNmEHU1beUsakJxvK55-RL29IqglQaXPXp3OBI6MdyC2M6XxetIQqSvr2wSRzSuxau3qL_UrCKU5egUOe2Up2BYkYOMd8PW__GrpeuF1Fgmd567M&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.4&permmsgid=msg-a:r-5771406837471990401&th=19d66e0767c6a59b&view=fimg&realattid=19d66e0023d1cb0627011&disp=thd&attbid=ANGjdJ9T63nRqUW27ke-QkX2Ry3rEX0l_Zy6LPGovcIu2qU-oHhFQ90qmJ9143id9Eflj78J0pBlxKRq6DhBCRmd2PQ9W_Rh62XtblZRIXh7VhPTtPtanuQDgHX8CHo&ats=2524608000000&sz=w1919-h869&auditContext=forDisplay"
-                        alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.5&permmsgid=msg-a:r-5421915552825779209&th=19d66ea192fb7a31&view=fimg&realattid=19d66e9f27e69b07d8c1&disp=thd&attbid=ANGjdJ_JlkLpc2m7V4o8oviEfTg2pvr9IpxjjpyGPrRIZzfiNXd3IUR1q5ciVGAXfpDFyVZZM3p9EHhfrUPvM8RtItChp5h_GW8gJTstXIJAYH7AxPRCqUOkGmEu4ic&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.3&permmsgid=msg-a:r-5771406837471990401&th=19d66e0767c6a59b&view=fimg&realattid=19d66e0023d208de76110&disp=thd&attbid=ANGjdJ-M2arEDZM1AjaV3hSznBqG5WLo8SX9gkA2_3YrWNzTJAxKt8-7zCBcuQ2tsKMsfDnQZFanvYf3u-VEFm5zbtMXkxpsG6TgntekRfKktRBdwU2qcqRn3VJ1nzE&ats=2524608000000&sz=w1919-h869&auditContext=forDisplay"
-                        alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
+                    <img src="assets/img/espaco-2.png" alt="Sala de Atendimento"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
@@ -1117,12 +1029,12 @@
         </div>
     </section>
 
-    <footer style="padding: 10rem 0 3rem 0; background-color: var(--text-dark); color: #fff;">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <!-- Coluna 1 -->
                 <div>
-                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2.5rem;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom: 2rem;">
                         <img src="https://www.neuropsysaude.com.br/assets/neuropsy-saude-logo.svg" alt="Neuropsy Saúde"
                             style="height: 35px; display: block;">
                         <span style="font-weight:600; font-size:1.1rem; color:var(--primary-color);">NEUROPSY

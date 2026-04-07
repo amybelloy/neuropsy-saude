@@ -38,9 +38,54 @@
     <!-- Conteúdo Sobre -->
     <section id="sobre-conteudo" class="about-section reveal">
         <div class="container about-content">
-            <div class="about-img">
-                <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/646741902_4303020353248352_8769518826187977627_n.png?stp=dst-png_p2048x2048&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=gvcUk5w_mc0Q7kNvwHwE1Q_&_nc_oc=AdoQT-p-qt0ZdQA1Z1NnaXjP5g3dcqa2miJUYSexFMeW0k9BkTshifhhDlc3Yw6A_pHBH-RERNEZosqduTXDB3i6&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AETOpi4y93zTFSkofJSebWiQKqkADiNUvy_wvVQ4mDBjw&oe=69F2A504"
-                    alt="Foto da Neuropsicóloga Charla Menezes">
+            <style>
+                .blob-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 2rem;
+                }
+                .blob-profile {
+                    position: relative;
+                    width: 420px;
+                    height: 420px;
+                    background: linear-gradient(135deg, rgba(12,166,150,0.1), rgba(12,166,150,0.3));
+                    border-radius: 60% 40% 50% 50% / 60% 50% 50% 40%;
+                    box-shadow: 0 15px 40px rgba(12,166,150,0.15), inset 0 0 0 8px rgba(255,255,255,0.7);
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end; /* Helps ground images without background */
+                }
+                .blob-profile::before {
+                    content: "";
+                    position: absolute;
+                    inset: -5px;
+                    background: linear-gradient(135deg, #0ca696, #4bb1e5);
+                    z-index: -1;
+                    opacity: 0.15;
+                    border-radius: inherit;
+                }
+                .blob-profile img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; /* Change to 'contain' and adjusting width if the user uploads a transparent PNG later */
+                    transform: scale(1.02); /* Avoid slight borders */
+                    transition: transform 0.4s ease;
+                }
+                .blob-profile:hover img {
+                    transform: scale(1.05); /* Suave zoom inside the static frame */
+                }
+                @media(max-width: 768px) {
+                    .blob-profile { width: 320px; height: 320px; }
+                }
+            </style>
+            
+            <div class="blob-wrapper">
+                <div class="blob-profile">
+                    <img src="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/662011119_942926398382648_8075483553385809706_n.png?stp=dst-png_s480x480&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=gemcys91THwQ7kNvwEotfSu&_nc_oc=AdogCbZ7-EWT5O4dPhHNCLYi3Br-jRO7weZAodiyr4HDNdP_wiIrwFe9PpzB56btEQqQ1PpIMoE5BGtMv2Sx0Mfj&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGoWXDZsi2b3ZkGEoLhum_NY8UTvAKBIJVfWenm7xRuIw&oe=69F6D96C"
+                        alt="Foto da Neuropsicóloga Charla Menezes">
+                </div>
             </div>
 
             <div class="about-text glass-panel" style="padding: 3rem; border: none; box-shadow: none; background: transparent;">
