@@ -59,7 +59,7 @@
     <section id="hero-slider" class="hero-slider-section">
         <div class="slider-container">
             <div class="slide active"
-                style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/img/hero/hero-1.png');">
+                style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80');">
                 <div class="slide-content container">
                     <h1>Avaliação Neuropsicológica e Tratamento Psicológico</h1>
                     <p>Somos uma referência no procedimento de avaliação neuropsicológica. Possuímos todos os principais
@@ -135,6 +135,7 @@
                 transition: opacity 0.8s ease-in-out;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 z-index: 1;
             }
 
@@ -145,11 +146,15 @@
 
             .slide-content {
                 color: #fff;
-                max-width: 900px;
+                max-width: 1000px;
                 padding: 0 2rem;
                 transform: translateY(20px);
                 opacity: 0;
                 transition: all 0.8s ease 0.3s;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .slide.active .slide-content {
@@ -977,69 +982,93 @@
             <div class="space-scroll-container"
                 style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 1rem 0 2rem 0; scrollbar-width: thin; scrollbar-color: var(--primary-color) transparent; -webkit-overflow-scrolling: touch;">
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/663102078_2203539360417807_3022219334269988299_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=J5WYDSi8CEgQ7kNvwEyoIQ4&_nc_oc=Adr519_WhapfKBO7aUxOL8ARDeR56BzoAUQqmJvFyrE6wbAMWx-UWgav5wPP_TOoJqm1XGeS7uZ2Dtcx8JQECyYt&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AH2VTnOC465yQoMdUsAS49LX32pqQIIzdysOnlxywlZSQ&oe=69FC1C59"
-                        alt="Recepção"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/660428156_4365265377120054_6417193400443442794_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=ox5RRCgYU-gQ7kNvwEQNcvy&_nc_oc=AdqtAE6hBfhaV905RbhrXd2gyIh5Lm5_AGoOIFT35iiIK4tnrwJL41xZrOpEqmoOaZ_IjKDZlKHdPzM4iOwryCpl&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AHxyHg2u5IDBKSg-gZn9jrmzxER3JMSqKNdXYKgItB0Lw&oe=69FC97E4"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.3&permmsgid=msg-a:r1637013474469651734&th=19d66cbc131fc141&view=fimg&realattid=19d66cb9a76eda8331a1&disp=thd&attbid=ANGjdJ9nQwg4SzehVNDRlIGk7cHuZcewd5Cxzs7CD0hMkbfKNjV2DGa-vflTjzfiFOhzbxBZbJJSfcFsPneC5k5fgZbuq-qI6ajTUX5MwucrAxgcAa6De_gebjZI8c4&ats=2524608000000&sz=w1919-h869&auditContext=forDisplay"
-                        alt="Sala de Atendimento"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/650110652_1956023141943280_9192762341735117034_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=rxV_yC1NXXYQ7kNvwG9CmIy&_nc_oc=AdqWrQcb8Io1TPkM1GcKsk-7B6Kw7FuP-UWoPDcSLdggJjYzDc6y3R-Ee6pMXiACofLG4yrRnjh2YtOJp2aBDFHv&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AHjms1AvQRd6kf34iV0gKU6SNiZsdUGZbrlZBumsBKj7Q&oe=69FCA16B"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.2&permmsgid=msg-a:r-7718102656179926292&th=19d66ea570446b61&view=fimg&realattid=19d66ea3c5d2096fa371&disp=thd&attbid=ANGjdJ_s-GFkzbyEIrtCYjKxXTyJB_GJqUmrWkHB6fV9YghZf4_AYxXetaqt21-BBNmug8TrWRIlx-F0m0Mj7QkGR1Ju2T3gCaC2Y5eNPfSWPWRt-ezDjl7iZ94FCZU&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/660480701_833347845767919_5980219545908145533_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_ohc=s9mP2fRUi_UQ7kNvwHbulmJ&_nc_oc=AdpfbcpVVukS9lOliF0gcvShsyKe1AS5CY4Y68q1wicXAOiVn0MhcDaHHoZecT6NWxNztOdORlxD2hjBPSLU7on8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AEDkikRMs3I4XRE_7VSGhrjfC1bCr2PT90P-idhIEp79Q&oe=69FCA65F"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPZ-0psoTstVf-gBmMkHuOxL-gRebIFRcOMj4kvl40Lnsda1Zd_bFNOA0AFKgivVZcJsAZPMaPnvvgEx8OtF7KsM_ykgUtqbrXu8E0pytld2oJRsA=w1919-h869?auditContext=forDisplay"
-                        alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/661721665_4344117275855507_7332483644401096125_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=pBEerlXJRPwQ7kNvwGkew8v&_nc_oc=AdqMzLrxYSXjjmOmIF79xjH2WLB7HDi_u8WYvnrgozDaE_RMN63b_8It7u8TpB1tlqzv4qNlqQMNhnMiJt9h54bH&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AE3eIVYb8fUQrhCXIttiz95AyxL6XNvm1dpiVL1DZMTLQ&oe=69FC7AC6"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.1&permmsgid=msg-a:r-7718102656179926292&th=19d66ea570446b61&view=fimg&realattid=19d66ea3c5db37927792&disp=thd&attbid=ANGjdJ-mVXRd1yF2TRD0IQXYR9wmwGxGCKmQqIAjnrnB604F-NE3nRvF_83g44IJ31TtN68tdy4MZ2y9M83eTOb00_ljoNX_n1Ox4JDYIEkpCVyvdJE-wqaxf4MQzsU&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/646498645_820702847741445_3904774788642016751_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mtK5zTLJc-gQ7kNvwGHlTPY&_nc_oc=AdqqinB2RqSjte7jcfhGiCEIKgVO4UeU07K1Kkg0UqU-orr54WfcGY13_wrfDhw_U7Rep2q90rEqO4dKQYjaE7nv&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AH2uReadv2OCTftpy646lZiMyJZCKY4bbhMFDzppxRLQA&oe=69FC862F"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.1&permmsgid=msg-a:r-4411935225471769040&th=19d66ef8b7cfccb2&view=fimg&realattid=19d66ef55d85860ed571&disp=thd&attbid=ANGjdJ_xo5XiylmFNmEHU1beUsakJxvK55-RL29IqglQaXPXp3OBI6MdyC2M6XxetIQqSvr2wSRzSuxau3qL_UrCKU5egUOe2Up2BYkYOMd8PW__GrpeuF1Fgmd567M&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/668411525_1831956064157385_2693057421368461250_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=TSUQ1PdTAzEQ7kNvwEWZWs-&_nc_oc=Adryjv1F98s1FVmNqMI50tZ6ScohX_V3jcFzt3hnwoMsVQZ0KSQTz9-t25eGMZtKGaC5mZlsRJbFQcyKfO-O08E2&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AHHTAFSvs2iiIOPp4XDu9MwBsLMZqRrNshHrzgoNfwKGw&oe=69FC7C2E"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.4&permmsgid=msg-a:r-5771406837471990401&th=19d66e0767c6a59b&view=fimg&realattid=19d66e0023d1cb0627011&disp=thd&attbid=ANGjdJ9T63nRqUW27ke-QkX2Ry3rEX0l_Zy6LPGovcIu2qU-oHhFQ90qmJ9143id9Eflj78J0pBlxKRq6DhBCRmd2PQ9W_Rh62XtblZRIXh7VhPTtPtanuQDgHX8CHo&ats=2524608000000&sz=w1919-h869&auditContext=forDisplay"
-                        alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/663111245_944322648246983_5527788733798677246_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=8BEgYb3lMV8Q7kNvwG8EwEX&_nc_oc=AdoamXBiDMOH4-cFuPGErPrl2dHQ7fYpJZd9DJ5cD2XVoH5zRM5ucuqR4WxlS7MGJSD-rZ4J0RBsyc1Sn7fcioJa&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGe_pJJEB0UyvZoE2fgUjSwPSCk_3l21s7VoX1jZwfr3A&oe=69FC9498"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.5&permmsgid=msg-a:r-5421915552825779209&th=19d66ea192fb7a31&view=fimg&realattid=19d66e9f27e69b07d8c1&disp=thd&attbid=ANGjdJ_JlkLpc2m7V4o8oviEfTg2pvr9IpxjjpyGPrRIZzfiNXd3IUR1q5ciVGAXfpDFyVZZM3p9EHhfrUPvM8RtItChp5h_GW8gJTstXIJAYH7AxPRCqUOkGmEu4ic&ats=2524608000000&sz=w1919-h869&auditContext=prefetch"
-                        alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/662602487_1275603997342136_4819094539774120625_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=UVO0khXEuQQQ7kNvwGC7njW&_nc_oc=AdrwaEgH0s-HYlUwkXfpGDgkZGCxlSiNXKCeVgOhXAYPwTF5lxFykze5Zi1tV04rUF3cdN2vGBBrsJR4TI0Y5UP5&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AFJHbHgfIwOx27Tvq1pJBJkw_RuCYfeUMaavpeV6qUaMA&oe=69FC9923"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=55eafdd981&attid=0.3&permmsgid=msg-a:r-5771406837471990401&th=19d66e0767c6a59b&view=fimg&realattid=19d66e0023d208de76110&disp=thd&attbid=ANGjdJ-M2arEDZM1AjaV3hSznBqG5WLo8SX9gkA2_3YrWNzTJAxKt8-7zCBcuQ2tsKMsfDnQZFanvYf3u-VEFm5zbtMXkxpsG6TgntekRfKktRBdwU2qcqRn3VJ1nzE&ats=2524608000000&sz=w1919-h869&auditContext=forDisplay"
-                        alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/668582840_956753716941307_3545767162904185728_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=AG5S4vakXoQQ7kNvwHqVIMP&_nc_oc=AdoKWrxIdHMXYQIizesmq4NyJYcEaoR5lUdokjC-yx2kWpzc36jLk2ljqq-ExGFEEwSarf0IxafvOMJLeCNe-sUc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGtGb8yGUvMC3effut8MEHd1s3NXsoSNXt30ZGAkuyZng&oe=69FC89C9"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/668534794_1474641710989958_2946447536994611138_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=5-03mS-96CIQ7kNvwHp5DVb&_nc_oc=Adpm5e8Tw1HtwgCfEtEkhqAwCVYXola-uh_DushFNthZrMeRmVQKyaLkxT2p37u-M8w5NjOFpRCTdHKtomVv_Gxe&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AEsaMOz3z-BZls1jYP058mIxpVpVP_KKlx2xhmNXCMOLw&oe=69FC9F9E"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
-                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
-                </div>
-                
-                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/662310829_1290203993300799_1379185789014172395_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_ohc=_Jt5q6ZQ9V0Q7kNvwEtnEZb&_nc_oc=Adqz9drx1CoBvDRswEPXdYq5RFWnsZyvA1yfqndkaz5NCTUeRkFRzwkZM4VXPsakc9fjDEB8-MbhqreoUzEeYsZc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGJ8ZFHlV14OaZDimAMjQBgUGVosGQ71mjphuizqXwgfA&oe=69FC7E62"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/661634192_1465590898566454_7817034988808264056_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=B_m5y7arCU8Q7kNvwHfwXyW&_nc_oc=Adr3anIbnEH8r2Btiwq-1HJ-wJ6YzxvjPyCJpfunEBOfOSFGG1v24Jsr22N1xGw_JLCeqb_LcaFZbr72154fB1SO&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AFx2WF_LTctFB-YwPx79IaI5vrVijyPjVoHUHzbsojPhg&oe=69FC7A4A"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
                 <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
-                    <img src="assets/img/espaco-3.png" alt="Escritório"
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/663276303_1451123892608755_5164813325255267636_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=obloPk9x9Z0Q7kNvwElzK9e&_nc_oc=AdqrXuSH-lS1Wjg2S4diEEKnzsPZQcfE6zOd6GvrQGVFwCxM7fKjvOlODH2hovtQHkuVoNhobSyAQoo7OWDqnzC0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGyOtvt3NeWRln2xiqTaP2BtrazVGK9mo-Yc_14E6tVAw&oe=69FC9B54"
+                        alt="Espaço Clínico"
+                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/663820862_26873598348941613_380774549227598866_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=DLYQF93g0gIQ7kNvwHXWE4-&_nc_oc=AdqybrBmP6HemY4pQTcIssId1IrO0CcDS-Q7uM4Oe5hNYeHOZMdIgo4kTovRvffxMQK793cdAfpiVbVolbIIRBfh&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AEH0ZlLeUgz5C4GBWgkFEi1OHohLdhwgjLRSHC6rOUg7Q&oe=69FC7A7F"
+                        alt="Espaço Clínico"
+                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/669041271_1567152327695189_8270756033199532908_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=zPAQW3eGyZIQ7kNvwHae4lW&_nc_oc=Adp7xncOz-opI4Ajhj6-snFdVBH8lPWYWWeKNEFmkEYr2vAr9z85tACNYU6TbkS4LLf-KnAHv1Ir7nnP_woAUqe3&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGGn-c5xsJceZAtD4Vi15I8cqcQY7TL17blwipfq664wA&oe=69FC7FB3"
+                        alt="Espaço Clínico"
+                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/663155557_958270146676896_2900251898025905874_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=K3tIsnNBEtIQ7kNvwGKEgz8&_nc_oc=AdrEtxgaIWwXjLIpHnRXsL3FIg6Ji6icrNNVH6nblVJLtVuKSo94rblqkvNshxBeqpj7wPq9bLBFw-6yUykn5Pf8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGRVVsOfp8RxVUhO6jtJoFFf1VODtDdYgHibO46_p5Kgg&oe=69FCA3FB"
+                        alt="Espaço Clínico"
+                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/660372045_943116175199684_3133343940495085573_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Jz3DwVNE11wQ7kNvwGsut2M&_nc_oc=AdpA3oDnUGRq_JGKpRHhGyxg8A-jG75PZ1cWHyBsy6Yvh7qGaOOQ3S-p0gvnaB1xXsmJHLmr3XOJLoouGqSP98EY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AFhjIxKTmYBdlhXaKjG6Frj0ClzJlRnvyNTd9i1NiGsCQ&oe=69FC7632"
+                        alt="Espaço Clínico"
+                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
+                </div>
+                <div class="space-item" style="flex: 0 0 400px; max-width: 85vw;">
+                    <img src="https://scontent.fsdu9-1.fna.fbcdn.net/v/t1.15752-9/661721665_1617104206191657_1308861561042183366_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=vVhlf0MHQjgQ7kNvwH6-vsE&_nc_oc=Adql7ny5NibCPIE7n1Lll21U05PaFVbjkIJ3LhPxIk0jDioIvPDwNoe59WC6_pz4nhSwrWGA6UADv2dW-eWjP8mn&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsdu9-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AFWsYTEmBiC1ph-Ez_BJ3SMZvZDW9DVkTbZYTKYiAAR4Q&oe=69FCA67B"
+                        alt="Espaço Clínico"
                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); transition: transform 0.3s ease;">
                 </div>
             </div>
