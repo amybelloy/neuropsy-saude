@@ -656,19 +656,56 @@ footer {
 .p-img-3 { width: 55%; height: 280px; top: 10%; right: 0; z-index: 2; }
 .hover-zoom:hover { transform: scale(1.05); z-index: 10; }
 
-/* Interactive Steps */
-.steps-grid { 
+/* Interactive Process Grid (5 Columns) */
+.process-grid { 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 1.5rem; 
+  margin-top: 4rem; 
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Values Grid (Centered and Square Cards) */
+.values-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
-  gap: 2rem; 
-  margin-top: 4rem; 
+  gap: 2rem;
+  margin-top: 4rem;
   width: 100%;
 }
+.values-grid .service-card {
+  flex: 0 0 320px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(12, 166, 150, 0.2); /* Re-adding the border */
+  padding: 2rem;
+  border-radius: 20px !important; 
+  transition: all 0.3s ease;
+}
+.values-grid .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(12, 166, 150, 0.1);
+}
+
+@media (max-width: 480px) {
+  .values-grid .service-card {
+    flex: 0 0 100%;
+    aspect-ratio: auto;
+    min-height: 280px;
+    padding: 2.5rem 1.5rem;
+  }
+}
+
 .step-card { 
   background: var(--bg-color); 
-  padding: 3rem 2rem; 
+  padding: 2.5rem 1.5rem; 
   border-radius: var(--border-radius-lg); 
   position: relative; 
   transition: all 0.4s ease; 
@@ -679,21 +716,26 @@ footer {
   justify-content: flex-start;
   text-align: center;
   overflow: hidden;
-  flex: 1 1 240px;
-  max-width: 300px;
-  min-height: 400px; /* Consistently taller for better presence */
-  height: auto;
+  min-height: 400px;
+  width: 100%;
 }
-@media (min-width: 1200px) {
+
+@media (max-width: 1200px) {
   .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
   }
-  .step-card {
-    max-width: none;
-    height: 100%;
-    min-height: 0;
+}
+
+@media (max-width: 850px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
   }
 }
 .step-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(12, 166, 150, 0.12); background: #fff; border-color: var(--primary-color); }
