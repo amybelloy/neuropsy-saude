@@ -94,6 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentImgIndex = 0;
 
+    spaceImages.forEach(img => {
+        if (img.src.startsWith('http')) {
+            const fileName = new URL(img.src).pathname.split('/').pop();
+            img.src = `assets/img/fotos-site/espaco/${fileName}`;
+        }
+        img.addEventListener('error', () => {
+            img.onerror = null;
+            img.src = 'assets/img/fotos-site/espaco/nosso-espaco-01.jpg';
+        });
+    });
+
     if (lightbox && lightboxImg && spaceImages.length > 0) {
         // Open lightbox
         spaceImages.forEach((img, index) => {
@@ -147,3 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
